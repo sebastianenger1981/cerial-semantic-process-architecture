@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Life Process Canvas — CSPA / EPCSIS-P v2.0</title>
+<style>
+  :root { --navy:#0F172A; --emerald:#065F46; --teal:#059669; --amber:#D97706; --red:#DC2626; --slate:#334155; --border:#CBD5E1; --bg:#F0FDF4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; color: var(--navy); background: #E2E8F0; padding: 20px; font-size: 12px; line-height: 1.42; }
+  .sheet { max-width: 1020px; margin: 0 auto; background: #FFF; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 28px rgba(15,23,42,0.12); border: 1px solid var(--border); }
+  header { background: linear-gradient(90deg, #064E3B, #059669); color: #FFF; padding: 16px 24px; border-bottom: 4px solid #F59E0B; display: flex; justify-content: space-between; align-items: center; }
+  header .tag { font-family: monospace; color: #FDE68A; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+  header h1 { font-size: 19px; font-weight: 800; margin-top: 2px; }
+  header .sub { font-size: 11px; color: #D1FAE5; }
+  .pulse { font-family: monospace; font-size: 11px; display: flex; gap: 8px; }
+  .pulse span { padding: 4px 9px; border-radius: 5px; background: rgba(255,255,255,0.16); font-weight: 700; }
+  .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 12px 20px; background: var(--bg); border-bottom: 1px solid #A7F3D0; }
+  .field { background: #FFF; border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; }
+  .field label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--emerald); }
+  .field .line { height: 18px; border-bottom: 1px dashed #94A3B8; margin-top: 3px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 20px 0; }
+  .box { border: 1.5px solid var(--border); border-radius: 8px; padding: 11px 14px; background: #FFF; }
+  .box h2 { font-size: 12.5px; font-weight: 800; color: var(--emerald); border-bottom: 1px solid #E2E8F0; padding-bottom: 5px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .box h2 span { font-family: monospace; font-size: 10.5px; color: var(--slate); }
+  .prompt { font-weight: 600; color: var(--slate); margin-top: 6px; font-size: 11px; }
+  .write-area { min-height: 28px; border: 1px dashed #CBD5E1; border-radius: 4px; background: #F8FAFC; margin-top: 3px; padding: 4px 8px; color: #94A3B8; font-size: 10.5px; }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 4px; }
+  th, td { border: 1px solid var(--border); padding: 5.5px 8px; text-align: left; }
+  th { background: #F1F5F9; font-weight: 700; }
+  .full-row { padding: 12px 20px 0; }
+  footer { margin-top: 12px; padding: 10px 20px; background: #064E3B; color: #D1FAE5; font-size: 10.5px; display: flex; justify-content: space-between; }
+  @media print {
+    body { background: #FFF; padding: 0; }
+    .sheet { box-shadow: none; border: none; max-width: 100%; }
+    @page { size: A4 landscape; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <div class="tag">CSPA / EPCSIS-P v2.0 • SOVEREIGN DAILY LIFE TEMPLATE</div>
+      <h1>Daily Life &amp; Personal Architecture Canvas</h1>
+      <div class="sub">"Love sets you free mentally and physically" — Protecting M.E.A.T., Dual-Aspect Flow &amp; Personal Z-Integrity</div>
+    </div>
+    <div class="pulse">
+      <span>☐ FLOW σ_Z ≤ 1.07</span>
+      <span>☐ AMBER Ω-BRAKE</span>
+      <span>☐ RED RESET</span>
+    </div>
+  </header>
+
+  <div class="meta-grid">
+    <div class="field"><label>Life Domain / Solo Project</label><div class="line"></div></div>
+    <div class="field"><label>Core Value Anchor (ϒ)</label><div class="line"></div></div>
+    <div class="field"><label>Week / Cycle Window</label><div class="line"></div></div>
+    <div class="field"><label>Sunday CCR Review Time</label><div class="line"></div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="box">
+      <h2>1. Sovereign Intent &amp; Letting-Go <span>y.m (Order First)</span></h2>
+      <div class="prompt">Inner Motivation Check (Love/Creation vs. Fear/Ego):</div>
+      <div class="write-area">Why am I choosing this freely without self-coercion?</div>
+      <div class="prompt">Single +1 Weekly Outcome &amp; Explicit "Not-To-Do" Release:</div>
+      <div class="write-area">+1 Deliverable: ________________ | Released distraction: ________________</div>
+    </div>
+
+    <div class="box">
+      <h2>2. M.E.A.T. Resource Shield <span>x.n Capacity Bounds</span></h2>
+      <table>
+        <thead><tr><th>Resource</th><th>Weekly Cap / Guardrail</th><th>Hard Boundary</th></tr></thead>
+        <tbody>
+          <tr><td><strong>M • Money</strong></td><td>Budget: ______________</td><td>Zero impulse/ego spend</td></tr>
+          <tr><td><strong>E • Energy</strong></td><td>Max ___ deep blocks/day</td><td>45m walk + non-digital rest</td></tr>
+          <tr><td><strong>A • Attention</strong></td><td>1 task per time-system</td><td>Phone out of bedroom</td></tr>
+          <tr><td><strong>T • Time</strong></td><td>Work cutoff: __:__ PM</td><td>8h sleep window locked</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="box" style="background:#FFFBEB; border-color:#F59E0B;">
+      <h2>3. Personal 4-Vector Z-Vitality Check <span>Z ≥ 0.70 Floor</span></h2>
+      <table>
+        <thead><tr><th>Element</th><th>Lived Reality Indicator</th><th>Score [0–1]</th></tr></thead>
+        <tbody>
+          <tr><td><strong>L (Self-Respect)</strong></td><td>Inner peace, gratitude, harmonious relationships</td><td>0.____</td></tr>
+          <tr><td><strong>N (Sovereignty)</strong></td><td>Clean "No" boundaries, zero people-pleasing</td><td>0.____</td></tr>
+          <tr><td><strong>M (Clarity)</strong></td><td>Calm focus, zero rumination or digital overload</td><td>0.____</td></tr>
+          <tr><td><strong>O (Body/Health)</strong></td><td>8h sleep, clean food, movement, zero exhaustion</td><td>0.____</td></tr>
+        </tbody>
+      </table>
+      <div class="prompt" style="margin-top:6px;">Personal <strong>Z = 0.____</strong> &nbsp;|&nbsp; <strong>σ_Z = 1.____</strong> &nbsp;(Target ≥ 0.85 / σ_Z ≤ 1.07)</div>
+    </div>
+
+    <div class="box">
+      <h2>4. Automation &amp; LCC Relationship Hygiene <span>Zero-DCC</span></h2>
+      <div class="prompt">Task Delegation Split:</div>
+      <div class="write-area">Auto (h=0): __________ | AI Co-Pilot: __________ | Pure Human: __________</div>
+      <div class="prompt">Interpersonal &amp; Digital Boundary Verification:</div>
+      <div style="margin-top:5px; font-size:11px; color:#1E293B; line-height:1.55;">
+        ☐ Zero one-sided communication or unreciprocated chasing<br>
+        ☐ Judge commitments by consistent actions over words<br>
+        ☐ Step away immediately from manipulative / high-drama nodes
+      </div>
+    </div>
+  </div>
+
+  <div class="full-row">
+    <div class="box">
+      <h2>5. Dual-Aspect Daily Rhythm &amp; CERIAL Ω Recovery Protocol <span>5:30 – 22:15 Reference</span></h2>
+      <table>
+        <thead><tr><th>05:30–07:00 Grounding</th><th>07:00–17:30 Focused X-Blocks</th><th>18:00–20:30 Decompression</th><th>21:00–22:15 Analog Rest</th><th>Amber / Red Ω-Trigger</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Stretch, weights, clean hydration, calm intent</td>
+            <td>Single-focus deep work + clear LCC communication</td>
+            <td>Hard work stop, outdoor walk, fresh cooked dinner</td>
+            <td>Book reading, offline sport/chess, 22:15 sleep</td>
+            <td>If σ_Z &gt; 1.07: cut tomorrow's WIP by 40% &amp; restore sleep</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <span><strong>Sunday CCR Mantra:</strong> Check what nourished life → Copy into routine → Release the rest ("Simply always getting better")</span>
+    <span>CSI Sovereign Life Architecture</span>
+  </footer>
+</div>
+</body>
+</html>

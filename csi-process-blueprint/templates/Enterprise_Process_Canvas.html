@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Process Canvas — CSPA / EPCSIS-P v2.0</title>
+<style>
+  :root { --navy:#0F172A; --blue:#1E3A8A; --cyan:#0284C7; --emerald:#059669; --amber:#D97706; --red:#DC2626; --slate:#334155; --border:#CBD5E1; --bg:#F8FAFC; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; color: var(--navy); background: #E2E8F0; padding: 20px; font-size: 12px; line-height: 1.42; }
+  .sheet { max-width: 1020px; margin: 0 auto; background: #FFF; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 28px rgba(15,23,42,0.12); border: 1px solid var(--border); }
+  header { background: linear-gradient(90deg, #0F172A, #1E3A8A); color: #FFF; padding: 16px 24px; border-bottom: 4px solid #F59E0B; display: flex; justify-content: space-between; align-items: center; }
+  header .tag { font-family: monospace; color: #FBBF24; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+  header h1 { font-size: 19px; font-weight: 800; margin-top: 2px; }
+  header .sub { font-size: 11px; color: #CBD5E1; }
+  .badge-group { display: flex; gap: 8px; font-family: monospace; font-size: 11px; }
+  .badge { padding: 4px 9px; border-radius: 5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.25); }
+  .b-green { background: rgba(5,150,105,0.25); color: #A7F3D0; }
+  .b-amber { background: rgba(217,119,6,0.25); color: #FDE68A; }
+  .b-red { background: rgba(220,38,38,0.25); color: #FECACA; }
+  .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 12px 20px; background: var(--bg); border-bottom: 1px solid var(--border); }
+  .field { background: #FFF; border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; }
+  .field label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--cyan); letter-spacing: 0.5px; }
+  .field .line { height: 18px; border-bottom: 1px dashed #94A3B8; margin-top: 3px; color: #64748B; font-size: 11px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 20px 0; }
+  .box { border: 1.5px solid var(--border); border-radius: 8px; padding: 11px 14px; background: #FFF; }
+  .box h2 { font-size: 12.5px; font-weight: 800; color: var(--blue); border-bottom: 1px solid #E2E8F0; padding-bottom: 5px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .box h2 span { font-family: monospace; font-size: 10.5px; color: var(--slate); }
+  .prompt { font-weight: 600; color: var(--slate); margin-top: 6px; font-size: 11px; }
+  .write-area { min-height: 30px; border: 1px dashed #CBD5E1; border-radius: 4px; background: #F8FAFC; margin-top: 3px; padding: 4px 8px; color: #94A3B8; font-size: 10.5px; }
+  .full-row { padding: 12px 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 4px; }
+  th, td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; }
+  th { background: #F1F5F9; font-weight: 700; color: var(--navy); }
+  .z-highlight { background: #FFFBEB; border-color: #F59E0B; }
+  footer { margin-top: 12px; padding: 10px 20px; background: #0F172A; color: #CBD5E1; font-size: 10.5px; display: flex; justify-content: space-between; }
+  @media print {
+    body { background: #FFF; padding: 0; }
+    .sheet { box-shadow: none; border: none; max-width: 100%; }
+    @page { size: A4 landscape; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div>
+      <div class="tag">CSPA / EPCSIS-P v2.0 • ENTERPRISE OPERATIONAL TEMPLATE</div>
+      <h1>Enterprise Process Architecture Canvas</h1>
+      <div class="sub">Synthesizing Design Thinking (y.m), PRINCE2 Stage Control, and ITIL Value Streams under the Z-Violation Law</div>
+    </div>
+    <div class="badge-group">
+      <span class="badge b-green">☐ GREEN σ_Z ≤ 1.07</span>
+      <span class="badge b-amber">☐ AMBER ≤ 1.15</span>
+      <span class="badge b-red">☐ RED HALT &gt; 1.15</span>
+    </div>
+  </header>
+
+  <div class="meta-grid">
+    <div class="field"><label>Process ID &amp; Name</label><div class="line">ENT-___ :</div></div>
+    <div class="field"><label>Apex Steward (ϒ — Tier 3)</label><div class="line"></div></div>
+    <div class="field"><label>Source Architect (Y — Tier 2)</label><div class="line"></div></div>
+    <div class="field"><label>Execution Netnodes (X — Tier 1)</label><div class="line"></div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="box">
+      <h2>1. Semantic Intent &amp; Justification <span>y.m (Order First)</span></h2>
+      <div class="prompt">Real Human / Customer Need (LCC Opt-In Sensed):</div>
+      <div class="write-area">What lived pain or outcome does this serve without coercion?</div>
+      <div class="prompt">N + 1 Generative Value &amp; Sunset Condition:</div>
+      <div class="write-area">Net-new value created + condition under which this process retires:</div>
+    </div>
+    <div class="box">
+      <h2>2. Syntactic Outcomes &amp; Decontamination <span>x.n ~ y.m</span></h2>
+      <div class="prompt">Verifiable Outcome Products &amp; UNAIQUE Clarity (η_sem ≥ 80%):</div>
+      <div class="write-area">1) Primary Output Artifact   2) ☐ Verified ≥80% receiver clarity</div>
+      <div class="prompt">Legacy Brownfield Decontamination ("Achtung" Check):</div>
+      <div class="write-area">List toxic legacy KPIs, fear triggers, or approval bottlenecks removed:</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="box z-highlight">
+      <h2>3. Non-Compensatory Z-Audit <span>Z = (L·N·M·O)^(1/4) ≥ 0.70</span></h2>
+      <table>
+        <thead><tr><th>Z-Element</th><th>Enterprise Verification</th><th>Score [0–1]</th></tr></thead>
+        <tbody>
+          <tr><td><strong>L (Goodwill)</strong></td><td>Psych safety, blameless learning, user respect</td><td>0.____</td></tr>
+          <tr><td><strong>N (Agency)</strong></td><td>Clear ownership + 1-click stop/override right</td><td>0.____</td></tr>
+          <tr><td><strong>M (Clarity)</strong></td><td>Bounded cognitive load, coherent incentives</td><td>0.____</td></tr>
+          <tr><td><strong>O (Material)</strong></td><td>Sustainable workload, fair pay &amp; ergonomic tools</td><td>0.____</td></tr>
+        </tbody>
+      </table>
+      <div class="prompt" style="margin-top:7px;">Composite <strong>Z = 0.____</strong> &nbsp;|&nbsp; Spectral <strong>σ_Z = 1.____</strong> &nbsp;|&nbsp; ☐ min(L,N,M,O) ≥ 0.50</div>
+    </div>
+
+    <div class="box">
+      <h2>4. Bounded Automation &amp; Integration <span>EPCSIS = Z[N+1]</span></h2>
+      <div class="prompt">Automation Sovereignty Quadrant (Select One):</div>
+      <div style="margin:4px 0 6px; font-size:11px; color:#1E293B;">
+        ☐ <strong>Q-I Full Auto (h=0)</strong> &nbsp; ☐ <strong>Q-II Shielded AI</strong> &nbsp; ☐ <strong>Q-III Co-Pilot</strong> &nbsp; ☐ <strong>Q-IV Human (h=1)</strong>
+      </div>
+      <div class="prompt">Cypher Semantic Netnode Channels (Ban DCC):</div>
+      <div class="write-area">LCC Input / FCC Co-Creation / ACC Escalation Owner + Atomic Rollback Plan:</div>
+      <div class="prompt">☐ Attested Zero Dark Cypher Connect (DCC) manipulation or surveillance abuse</div>
+    </div>
+  </div>
+
+  <div class="full-row">
+    <div class="box">
+      <h2>5. PRINCE2 × CSI Tolerance Bands &amp; Continual CCR Loop <span>Management by Exception</span></h2>
+      <table>
+        <thead>
+          <tr><th>Telemetry Dimension</th><th>Target</th><th>Green (Autonomous Flow)</th><th>Amber (CERIAL Ω_0 = 0.618 Brake)</th><th>Red Circuit-Breaker (Immediate Halt)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Δ_time (Cycle / SLA)</strong></td><td>_______</td><td>≤ +15% deviation</td><td>+15%..+35% → Throttle WIP</td><td>&gt; +35% → Swarm Recovery</td></tr>
+          <tr><td><strong>Δ_cost (Resource)</strong></td><td>_______</td><td>≤ +10% deviation</td><td>+10%..+25% → Tier-2 Y Review</td><td>&gt; +25% → Freeze &amp; Re-Scope</td></tr>
+          <tr><td><strong>Δ_quality (η_sem)</strong></td><td>≥ 85%</td><td>η_sem ≥ 80%</td><td>75%..79% → Inject Human h</td><td>&lt; 75% → Atomic Rollback</td></tr>
+          <tr><td><strong>Δ_Z / σ_Z (Supreme)</strong></td><td>Z ≥ 0.90</td><td>Z ≥ 0.85 (σ_Z ≤ 1.07)</td><td>0.70 ≤ Z &lt; 0.85 (σ_Z ≤ 1.15)</td><td><strong>Z &lt; 0.70 (σ_Z &gt; 1.15) → HARD HALT</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <span><strong>CCR Cadence (Check • Copy • Release):</strong> Next Review Date: _______________</span>
+    <span>Cypher Semantic Intelligence (CSI) • Axiom 0 Non-Negotiable</span>
+  </footer>
+</div>
+</body>
+</html>
