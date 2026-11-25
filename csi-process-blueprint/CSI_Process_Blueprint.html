@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerial Semantic Process Architecture (CSPA / EPCSIS-P v2.0) — Master Visual Blueprint</title>
+  <style>
+    :root {
+      --bg-page: #F1F5F9;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F8FAFC;
+      --bg-sidebar: #0F172A;
+      --text-main: #0F172A;
+      --text-body: #1E293B;
+      --text-muted: #475569;
+      --border: #CBD5E1;
+      --border-light: #E2E8F0;
+      --navy: #0F172A;
+      --indigo: #1E3A8A;
+      --cyan: #0284C7;
+      --emerald: #059669;
+      --amber: #D97706;
+      --gold: #F59E0B;
+      --crimson: #DC2626;
+      --violet: #6D28D9;
+      --math-bg: #F8FAFC;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0B1120;
+      --bg-surface: #111827;
+      --bg-subtle: #1E293B;
+      --bg-sidebar: #070B14;
+      --text-main: #F8FAFC;
+      --text-body: #E2E8F0;
+      --text-muted: #94A3B8;
+      --border: #334155;
+      --border-light: #1E293B;
+      --indigo: #60A5FA;
+      --math-bg: #0F172A;
+      --shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-body);
+      line-height: 1.65;
+      font-size: 15px;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sticky Editorial Sidebar */
+    aside.sidebar {
+      width: 286px;
+      background: var(--bg-sidebar);
+      color: #E2E8F0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      padding: 26px 20px;
+      border-right: 3px solid var(--gold);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand-badge {
+      font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #FBBF24;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .brand-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .brand-sub {
+      font-size: 11.5px;
+      color: #94A3B8;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #1E293B;
+      margin-bottom: 16px;
+    }
+
+    nav.toc ul { list-style: none; }
+    nav.toc li { margin-bottom: 4px; }
+    nav.toc a {
+      display: block;
+      color: #CBD5E1;
+      text-decoration: none;
+      font-size: 12.8px;
+      font-weight: 500;
+      padding: 7px 10px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    nav.toc a:hover {
+      background: rgba(251, 191, 36, 0.14);
+      color: #FBBF24;
+    }
+    nav.toc .toc-num {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 11px;
+      color: #F59E0B;
+      margin-right: 6px;
+      font-weight: 700;
+    }
+
+    .sidebar-controls {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #1E293B;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn-ctrl {
+      background: #1E293B;
+      color: #F8FAFC;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-ctrl:hover { background: #334155; }
+    .btn-gold { background: linear-gradient(90deg, #B45309, #D97706); border-color: #F59E0B; color: #FFF; }
+
+    /* Main Content Container */
+    main.blueprint {
+      margin-left: 286px;
+      flex: 1 1 0%;
+      min-width: 0;
+      max-width: 1080px;
+      padding: 36px 40px 80px;
+    }
+
+    /* Hero Cover Section */
+    .cover-card {
+      background: linear-gradient(135deg, #0F172A 0%, #172554 65%, #0F172A 100%);
+      color: #FFFFFF;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #334155;
+      margin-bottom: 38px;
+    }
+
+    .cover-hero-img {
+      width: 100%;
+      max-height: 370px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .cover-body {
+      padding: 32px 38px 36px;
+    }
+
+    .cover-kicker {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #FBBF24;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .cover-body h1 {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.18;
+      letter-spacing: -0.4px;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+
+    .cover-subtitle {
+      font-size: 16.5px;
+      color: #CBD5E1;
+      max-width: 880px;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .cover-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .meta-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .meta-pill .lbl {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #93C5FD;
+      letter-spacing: 0.8px;
+    }
+    .meta-pill .val {
+      font-size: 12.8px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 3px;
+    }
+
+    /* Section Cards */
+    section.chapter {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 34px 38px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .ch-kicker {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      margin-bottom: 4px;
+    }
+
+    section.chapter h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-light);
+      letter-spacing: -0.3px;
+    }
+
+    section.chapter h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--indigo);
+      margin: 26px 0 10px;
+    }
+
+    section.chapter h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 18px 0 8px;
+    }
+
+    p { margin-bottom: 13px; }
+    ul, ol { margin: 8px 0 16px 22px; }
+    li { margin-bottom: 6px; }
+
+    code {
+      font-family: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      padding: 1px 5px;
+      border-radius: 4px;
+      color: var(--indigo);
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    /* Callouts */
+    .callout {
+      border-left: 5px solid var(--gold);
+      background: var(--bg-subtle);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 18px 0;
+      border-top: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .callout-title {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      color: var(--amber);
+    }
+    .callout.axiom { border-left-color: var(--gold); background: rgba(245, 158, 11, 0.07); }
+    .callout.danger { border-left-color: var(--crimson); background: rgba(220, 38, 38, 0.06); }
+    .callout.danger .callout-title { color: var(--crimson); }
+    .callout.emerald { border-left-color: var(--emerald); background: rgba(5, 150, 105, 0.06); }
+    .callout.emerald .callout-title { color: var(--emerald); }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; margin: 16px 0 22px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.2px;
+      line-height: 1.48;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+    th {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 12.2px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    tr:nth-child(even) td { background: rgba(148, 163, 184, 0.05); }
+
+    /* Figures & Visuals */
+    figure.blueprint-fig {
+      margin: 24px 0;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+    }
+    figure.blueprint-fig img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    figure.blueprint-fig figcaption {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #E2E8F0;
+      font-size: 12.5px;
+      color: #475569;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .section-banner {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      margin: 14px 0 18px;
+      display: block;
+    }
+
+    /* Native MathML Equations — 100% Offline & Print Safe */
+    .math-card {
+      background: var(--math-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--indigo);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      overflow-x: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .math-card math {
+      font-family: 'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'Times New Roman', serif;
+      font-size: 17px;
+      color: var(--text-main);
+    }
+    math {
+      font-family: 'Cambria Math', 'STIX Two Math', 'Latin Modern Math', 'Times New Roman', serif;
+      font-size: 1.06em;
+    }
+    .eq-num {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* Pillar Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 16px 0;
+    }
+    .mini-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      background: var(--bg-subtle);
+    }
+    .mini-card h4 {
+      margin-top: 0;
+      color: var(--indigo);
+      font-size: 15.5px;
+      margin-bottom: 8px;
+    }
+
+    /* Worked Example Comparison Cards */
+    .example-box {
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin: 22px 0;
+      background: var(--bg-subtle);
+    }
+    .verdict-pill {
+      display: inline-block;
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-top: 6px;
+    }
+    .v-red { background: #FEE2E2; color: #991B1B; border: 1px solid #DC2626; }
+    .v-green { background: #DCFCE7; color: #065F46; border: 1px solid #059669; }
+    .v-amber { background: #FEF3C7; color: #92400E; border: 1px solid #D97706; }
+
+    /* Interactive Z-Violation Sandbox Widget */
+    .z-calc-widget {
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 22px 26px;
+      background: var(--bg-subtle);
+      margin: 24px 0;
+    }
+    .slider-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 24px;
+      margin: 14px 0 18px;
+    }
+    .slider-row label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .slider-row input[type="range"] {
+      width: 100%;
+      accent-color: var(--indigo);
+      cursor: pointer;
+    }
+    .calc-readout {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      background: var(--bg-surface);
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .calc-readout .k { font-family: monospace; font-size: 11px; color: var(--text-muted); }
+    .calc-readout .v { font-family: monospace; font-size: 18px; font-weight: 800; margin-top: 2px; }
+
+    /* Template Cards */
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .tpl-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      background: var(--bg-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tpl-links { display: flex; gap: 8px; margin-top: 14px; }
+    .tpl-links a {
+      flex: 1;
+      text-align: center;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      background: var(--indigo);
+      color: #FFFFFF;
+    }
+    .tpl-links a.sec { background: transparent; color: var(--indigo); border: 1px solid var(--indigo); }
+
+    footer.doc-footer {
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      padding: 24px 0 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      aside.sidebar { position: static; width: 100%; border-right: none; border-bottom: 3px solid var(--gold); }
+      body { flex-direction: column; }
+      main.blueprint { margin-left: 0; padding: 24px 20px; }
+      .cover-meta-grid, .grid-2, .template-grid, .calc-readout { grid-template-columns: 1fr; }
+    }
+
+    /* Clean Multi-Page Print & PDF Export Pagination */
+    @media print {
+      @page { size: A4 portrait; margin: 13mm 13mm 15mm 13mm; }
+      aside.sidebar, .no-print { display: none !important; }
+      body {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        font-size: 10.5pt;
+        line-height: 1.48;
+        display: block;
+      }
+      main.blueprint {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .cover-card {
+        box-shadow: none !important;
+        break-after: page;
+        page-break-after: always;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      section.chapter {
+        box-shadow: none !important;
+        border: 1px solid #CBD5E1 !important;
+        padding: 18px 22px !important;
+        margin-bottom: 18px !important;
+        break-inside: auto;
+      }
+      section.page-start {
+        break-before: page;
+        page-break-before: always;
+      }
+      figure.blueprint-fig, .math-card, .callout, .example-box, .mini-card, tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .table-wrap {
+        overflow: visible !important;
+      }
+      table {
+        width: 100% !important;
+        table-layout: fixed;
+        font-size: 9.2pt !important;
+      }
+      th, td {
+        padding: 6px 8px !important;
+      }
+      .math-card {
+        overflow: visible !important;
+        padding: 10px 12px !important;
+        gap: 8px !important;
+        flex-wrap: wrap;
+      }
+      .math-card math {
+        font-size: 11.8pt !important;
+      }
+      .eq-num {
+        font-size: 9.5pt !important;
+        margin-left: auto;
+      }
+      header, .cover-card, th, .verdict-pill, .callout {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a { color: #0F172A; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div>
+      <div class="brand-badge">CSI • AXIOM 0 LOCKED</div>
+      <div class="brand-title">CSPA / EPCSIS-P v2.0</div>
+      <div class="brand-sub">Cypher Semantic Intelligence Process Design Blueprint</div>
+      <nav class="toc">
+        <ul>
+          <li><a href="#cover"><span class="toc-num">00</span>Executive Manifesto</a></li>
+          <li><a href="#ch1"><span class="toc-num">01</span>RAG Ground Truth &amp; Axiom Lock</a></li>
+          <li><a href="#ch2"><span class="toc-num">02</span>Classical Purification Matrix</a></li>
+          <li><a href="#ch3"><span class="toc-num">03</span>Four Functional Process Pillars</a></li>
+          <li><a href="#ch4"><span class="toc-num">04</span>Dual-Scale Fractal Playbooks</a></li>
+          <li><a href="#ch5"><span class="toc-num">05</span>Mathematical Formalization</a></li>
+          <li><a href="#ch6"><span class="toc-num">06</span>Worked Numerical Examples</a></li>
+          <li><a href="#ch7"><span class="toc-num">07</span>60-Minute Launch &amp; Templates</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sidebar-controls no-print">
+      <button class="btn-ctrl" onclick="toggleTheme()">Toggle Light / Dark Theme</button>
+      <button class="btn-ctrl btn-gold" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </aside>
+
+  <!-- MASTER BLUEPRINT CONTENT -->
+  <main class="blueprint">
+
+    <!-- COVER HERO -->
+    <div class="cover-card" id="cover">
+      <img src="./assets/cover_hero_blueprint.jpg" alt="Cerial Semantic Process Architecture Hero Illustration" class="cover-hero-img">
+      <div class="cover-body">
+        <div class="cover-kicker">Cypher Semantic Intelligence (CSI) • Master Architecture &amp; Field Manual</div>
+        <h1>Cerial Semantic Process Architecture (CSPA / EPCSIS-P v2.0)</h1>
+        <p class="cover-subtitle">
+          A self-contained, mathematically rigorous paradigm for Process Optimization, Bounded Automation, Semantic Integration, and Live Governance—synthesizing the purified DNA of ITIL 4, PRINCE2 (7th Ed.), and Design Thinking under the non-negotiable <strong>Z-Violation Law</strong>.
+        </p>
+        <div class="cover-meta-grid">
+          <div class="meta-pill">
+            <div class="lbl">Foundational Theory</div>
+            <div class="val">Sebastian Enger, M.Sc. (2007–2026)</div>
+          </div>
+          <div class="meta-pill">
+            <div class="lbl">Supreme Invariant</div>
+            <div class="val">Z = (L·N·M·O)¹ᐟ⁴ ≥ 0.70 (σ_Z ≤ 1.15)</div>
+          </div>
+          <div class="meta-pill">
+            <div class="lbl">Fractal Scope</div>
+            <div class="val">Enterprise Ops ↔ Daily Life</div>
+          </div>
+          <div class="meta-pill">
+            <div class="lbl">Adoption Time</div>
+            <div class="val">≤ 60 Minutes • Zero Prerequisites</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 1: AXIOM LOCK -->
+    <section class="chapter" id="ch1">
+      <div class="ch-kicker">Section 01 • Canonical RAG Ground Truth</div>
+      <h2>1. Foundational Axiom Lock &amp; The Z-Violation Law</h2>
+
+      <p>
+        Legacy corporate frameworks treat process management as a purely mechanical exercise: boxes, queues, SLAs, and cost ratios. Yet empirical history across corporations, software architectures, and personal routines demonstrates a deterministic law discovered and formalized in <strong>Cypher Semantic Intelligence (CSI)</strong>: whenever a process achieves short-term output through fear, coercion, opaque bureaucracy, or human exhaustion, internal disorder surges until the system collapses from within.
+      </p>
+
+      <div class="callout axiom">
+        <div class="callout-title">Supreme Invariant — Axiom 0 &amp; Theorem 7.1 (The Z-Violation Law)</div>
+        <p style="margin-bottom:0;">
+          <strong>Unconditional Love and Humanity (<em>Z</em>)</strong> is not ethical decoration—it is a hard mathematical stability invariant. In every relational-semantic system <code>S = (X, R, Φ, Σ)</code>, sustained erosion of <code>Z(S, t) → 0</code> deterministically drives internal entropy divergence (<code>dE/dt ∝ −Z</code>, <code>E → ∞</code>), semantic incoherence of <code>Σ</code>, and irreversible viability annihilation (<code>lim V(S, t) = 0</code>).
+        </p>
+      </div>
+
+      <h3>1.1 Canonical Source Mapping from the CSI Corpus</h3>
+      <p>
+        Every structural rule in <strong>CSPA / EPCSIS-P v2.0</strong> is anchored without drift in the workspace <code>philosophy/</code> specifications:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>CSI Pillar / Theorem</th>
+              <th>Canonical Mathematical Expression</th>
+              <th>RAG Source Anchor</th>
+              <th>Direct Process Engineering Consequence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Relational-Semantic System</strong></td>
+              <td><code>S = (X, R, Φ, Σ)</code></td>
+              <td><code>The_Z_Theorem_Universal_Stability_Law.md</code> (§2, Def. 2.1); <code>Z-Theorem.docx</code></td>
+              <td>A process is never just tasks (<code>X</code>) and transitions (<code>Φ</code>); it carries a live semantic state space <code>Σ</code> (intent, agency, trust).</td>
+            </tr>
+            <tr>
+              <td><strong>Complementary Semantic Duality (PCSD)</strong></td>
+              <td><code>S = ⟨P, M, I⟩</code>, <code>Meaning(S) = f(P ↔ M)</code></td>
+              <td><code>principle_of_complementary_semantic_duality...md</code> (§3–§4, §7)</td>
+              <td>Formal methods (<code>P ≡ x.n</code>) without meaning (<code>M ≡ y.m</code>) create bureaucratic noise; meaning without structure creates hallucination.</td>
+            </tr>
+            <tr>
+              <td><strong>Duality-to-Trinity Constructive Binding</strong></td>
+              <td><code>N = {x.n, y.m} → N~ = {x.n ~ y.m}</code></td>
+              <td><code>2024 CSI BASED PROCESS DESIGN...pdf</code> (p. 2 spec v1.0.0.2); <code>Cypher.Semantic...658.pdf</code> (pp. 37, 41, 209)</td>
+              <td>ITIL, PRINCE2, and Design Thinking supply <code>x.n</code> mechanics; CSI supplies <code>y.m</code> alignment. Optimal processes lock into balanced <code>~</code> resonance.</td>
+            </tr>
+            <tr>
+              <td><strong>4-Quality Humanity Vector</strong></td>
+              <td><code>Z = (L, N, M, O) ∈ [0, 1]</code></td>
+              <td><code>Cypher.Semantic...658.pdf</code> (p. 38 / Dossier p. 34); <code>Z-Violation-Theory_Whitepaper.pdf</code></td>
+              <td><strong>L</strong>ove (goodwill/safety), <strong>N</strong> (agency/force), <strong>M</strong>ental (clarity), <strong>O</strong> (physical/material viability). Breaching any one collapses <code>Z</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>Spectral Trajectory &amp; CERIAL Ω Brake</strong></td>
+              <td><code>Z* = 1.000, S_0 = 0.15, Ω_0 = 0.618</code></td>
+              <td><code>z-violation-theory.py</code> (ll. 14–53); <code>Z-Violation-Theory.txt</code></td>
+              <td><code>σ_Z ≤ 1.07</code>: Green Flow; <code>1.07 &lt; σ_Z ≤ 1.15</code>: Amber CERIAL Ω damping; <code>σ_Z &gt; 1.15</code>: Red runaway <code>V_Z</code> circuit-breaker halt.</td>
+            </tr>
+            <tr>
+              <td><strong>EPCSIS Shielded Innovation</strong></td>
+              <td><code>EPCSIS = Z[N + 1] = Z[Y]</code></td>
+              <td><code>Cypher.Semantic...658.pdf</code> (pp. 42–43 / Dossier pp. 38–39)</td>
+              <td>Every optimization or AI automation step (<code>N + 1</code>) must be wrapped inside the protective Z-Shield <code>Z[·]</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>UNAIQUE Clarity &amp; CCR Loop</strong></td>
+              <td><code>η_sem ≥ 0.80</code>; <code>CCR = Check → Copy → Release</code></td>
+              <td><code>2022.The.UNAIQUE.Algorithm...pdf</code> (p. 2); <code>Cypher.Semantic...658.pdf</code> (pp. 2, 62, 74, 259)</td>
+              <td>Every interface/SOP must achieve ≥80% first-read comprehension for its target persona; improvements compound openly via <code>CCR</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-title">Canonical Failure Case ("The McKinsey Extraction Trap") &amp; Brownfield Contamination Rule ("Achtung")</div>
+        <p style="margin-bottom:0;">
+          Directly codifying Sebastian Enger's <code>21.11.2024</code> architectural specification (<code>2024 CSI BASED PROCESS DESIGN...pdf</code>, p. 2):<br>
+          <strong>1. Cost-Extraction Collapse:</strong> Auditing a production process solely as "too expensive" (<code>x.n</code>) and executing mass layoffs to fund short-term executive/shareholder bonuses violates <code>Z</code> (collapsing <code>L</code> and <code>O</code>), injecting systemic fear and destructive dissonance that deterministically destroys the enterprise over the medium term.<br>
+          <strong>2. Legacy Contamination Warning:</strong> Grafting AI automation or new workflows onto an inherited corporate process built on an unbalanced <code>y.m</code> foundation (<code>-</code> fear/control or <code>+</code> ungrounded hype) corrupts the new system. Every brownfield process must pass a <strong>Z-Decontamination Gate</strong> before automation.
+        </p>
+      </div>
+
+      <figure class="blueprint-fig">
+        <img src="./assets/fig1_architecture_stack.svg" alt="Figure 1: The CSI Process Architecture Stack">
+        <figcaption><strong>Figure 1 — The Cerial Semantic Process Architecture Stack:</strong> Five fractal layers anchored on Axiom 0, coupling PCSD/Trinity semantics with purified operational DNA across Enterprise and Daily Life scales.</figcaption>
+      </figure>
+    </section>
+
+    <!-- CHAPTER 2: PURIFICATION MATRIX -->
+    <section class="chapter page-start" id="ch2">
+      <div class="ch-kicker">Section 02 • Classical Synthesis Without Study Overhead</div>
+      <h2>2. Deconstruction &amp; The Z-Purification Matrix (ITIL 4 × PRINCE2 × Design Thinking)</h2>
+
+      <p>
+        Classical frameworks each solve one fragment of reality while leaving fatal blind spots: <strong>Design Thinking</strong> discovers human needs but lacks controlled execution; <strong>PRINCE2</strong> bounds project risk and stages but degenerates into heavy document bureaucracy; <strong>ITIL 4</strong> stabilizes ongoing services but calcifies into ticket-queue silos and rubber-stamp approval boards. Below, their 15 highest-leverage mechanisms are purified through the Z-Violation Audit into zero-jargon CSI primitives.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Origin</th>
+              <th>Classical Primitive</th>
+              <th>Legacy Failure / Z-Violation Mode</th>
+              <th>Refactored CSI Process Primitive (Ready to Execute)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Design Thinking</strong></td>
+              <td>1. Empathize</td>
+              <td>Performative workshops or UX research weaponized into addictive dark patterns (<code>DCC</code>, <code>L ↓</code>).</td>
+              <td><strong>Resonant Need Sensing (LCC):</strong> Consent-based observation of lived human friction and energy cost.</td>
+            </tr>
+            <tr>
+              <td><strong>Design Thinking</strong></td>
+              <td>2. Define</td>
+              <td>Framing problems strictly around internal conversion/cost KPIs while ignoring human externalities.</td>
+              <td><strong>Semantic Intent Charter (y.m First):</strong> 3-sentence charter locking human need, <code>+1</code> value, and <code>Z ≥ 0.70</code> floor.</td>
+            </tr>
+            <tr>
+              <td><strong>Design Thinking</strong></td>
+              <td>3. Ideate</td>
+              <td>Unbounded sticky-note theater (PCSD <code>M</code>-only hallucination) with zero operational follow-through.</td>
+              <td><strong>N + 1 Generative Options:</strong> Synthesize 3 concrete designs creating net-new value without zero-sum harm.</td>
+            </tr>
+            <tr>
+              <td><strong>Design Thinking</strong></td>
+              <td>4. Prototype</td>
+              <td>Dumping fragile MVPs onto live operations without blast-radius limits or rollback paths.</td>
+              <td><strong>Sandbox Netnode Trial:</strong> Validate inside an isolated, 1-click reversible Cypher Semantic Netnode.</td>
+            </tr>
+            <tr>
+              <td><strong>Design Thinking</strong></td>
+              <td>5. Test</td>
+              <td>Measuring speed/clicks (<code>x.n</code>) while ignoring operator fatigue or user frustration (<code>y.m</code>).</td>
+              <td><strong>Dual-Aspect Resonance Test (x.n ~ y.m):</strong> Require passing scores on both output quality and human <code>Z</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>PRINCE2 (7th)</strong></td>
+              <td>6. Continued Business Justification</td>
+              <td>Sunk-cost zombie initiatives kept for politics, or predatory ROI cuts that violate human dignity.</td>
+              <td><strong>Live Purpose &amp; Z-Justification:</strong> Processes must continuously prove real value <em>and</em> <code>Z ≥ 0.70</code>, or sunset cleanly.</td>
+            </tr>
+            <tr>
+              <td><strong>PRINCE2 (7th)</strong></td>
+              <td>7. Defined Roles &amp; Accountability</td>
+              <td>Diffused committee responsibility ("everyone signed, nobody owns") paired with downward blame (<code>N → 0</code>).</td>
+              <td><strong>3-Tier CSI Sovereignty (ϒ / Y / X):</strong> Single-point stewards for Purpose (<code>ϒ</code>), Architecture (<code>Y</code>), and Delivery (<code>X</code>).</td>
+            </tr>
+            <tr>
+              <td><strong>PRINCE2 (7th)</strong></td>
+              <td>8. Focus on Products</td>
+              <td>Surveillance of hours, activity logs, and busywork meetings instead of tangible outcomes.</td>
+              <td><strong>Outcome-Artifact Contracts:</strong> Specify the finished artifact at <code>η_sem ≥ 80%</code> clarity; grant method autonomy.</td>
+            </tr>
+            <tr>
+              <td><strong>PRINCE2 (7th)</strong></td>
+              <td>9. Manage by Stages</td>
+              <td>Month-long steering-committee delays and 80-page slide decks (<code>dE/dt ↑</code>).</td>
+              <td><strong>15-Minute Z-Stage Gates:</strong> Rapid pre-flight check verifying artifact readiness, rollback safety, and <code>σ_Z ≤ 1.15</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>PRINCE2 (7th)</strong></td>
+              <td>10. Manage by Exception</td>
+              <td>Constant micromanagement during normal ops followed by punitive panic during delays.</td>
+              <td><strong>4D Δ-Tolerance Bands:</strong> Zero interference in Green; CERIAL <code>Ω</code> damping in Amber; Circuit-Breaker in Red.</td>
+            </tr>
+            <tr>
+              <td><strong>ITIL 4</strong></td>
+              <td>11. Service Value System</td>
+              <td>Local department optimization creating cross-team handoff chasms for the end customer.</td>
+              <td><strong>End-to-End Value-Resonance Stream:</strong> Connect coupled Netnodes from human trigger to verified relief.</td>
+            </tr>
+            <tr>
+              <td><strong>ITIL 4</strong></td>
+              <td>12. Incident Management</td>
+              <td>Tier 1→2→3 ticket ping-pong, robotic scripts, and chronic overnight on-call burnout (<code>O ↓</code>).</td>
+              <td><strong>Blameless Swarm Recovery:</strong> Instant cross-skill swarming to restore flow + protected recovery budgets.</td>
+            </tr>
+            <tr>
+              <td><strong>ITIL 4</strong></td>
+              <td>13. Problem Management</td>
+              <td>Lazy "human error" postmortems leaving broken tools and overloaded schedules intact.</td>
+              <td><strong>Root Entropy &amp; Z-Decay Fix:</strong> Eliminate structural <code>x.n / y.m</code> mismatches and latent coercion triggers.</td>
+            </tr>
+            <tr>
+              <td><strong>ITIL 4</strong></td>
+              <td>14. Change Enablement</td>
+              <td>Bureaucratic CAB bottlenecks slowing safe deployments while missing ethical/human risks.</td>
+              <td><strong>EPCSIS Shielded Transition (Z[N+1]):</strong> Auto-approve Z-safe tests; require Z-Gate audit for human-facing changes.</td>
+            </tr>
+            <tr>
+              <td><strong>ITIL 4</strong></td>
+              <td>15. Continual Improvement</td>
+              <td>Top-down "reorg fatigue" that piles new rules onto old rules without ever pruning.</td>
+              <td><strong>CCR Evolution Loop:</strong> <em>Check</em> telemetry → <em>Copy</em> proven high-Z patterns → <em>Release</em> openly &amp; delete dead weight.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="blueprint-fig">
+        <img src="./assets/fig2_master_workflow.svg" alt="Figure 2: End-to-End Master Graphical Workflow">
+        <figcaption><strong>Figure 2 — End-to-End Master Graphical Workflow:</strong> Closed-loop state machine progressing across four swimlanes from LCC Human Need Sensing through the Z-Violation Stage Gate, Bounded Execution, Live Telemetry, and CCR Evolution.</figcaption>
+      </figure>
+    </section>
+
+    <!-- CHAPTER 3: FOUR PILLARS -->
+    <section class="chapter page-start" id="ch3">
+      <div class="ch-kicker">Section 03 • End-to-End System Mechanics</div>
+      <h2>3. Architecture of the Four Functional Process Pillars</h2>
+
+      <div class="grid-2">
+        <div class="mini-card">
+          <h4>Pillar 1 • Process Optimization (x.n ~ y.m Refinement)</h4>
+          <ul>
+            <li><strong>Order in <code>y.m</code> First:</strong> Never automate or purchase software before writing a crisp 3-line Semantic Intent Charter.</li>
+            <li><strong>Decontaminate Brownfield Debt:</strong> Strip fear-driven KPIs, redundant sign-offs, and contradictory incentives before redesigning steps.</li>
+            <li><strong>UNAIQUE ≥80% Clarity Rule:</strong> Every SOP, prompt, ticket template, and API spec must transfer ≥80% unambiguous comprehension on first read to its target persona.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h4>Pillar 2 • Process Automation (EPCSIS = Z[N+1])</h4>
+          <ul>
+            <li><strong>Automate Syntax, Never Sovereignty:</strong> Delegate deterministic, repeatable <code>x.n</code> mechanics to scripts/AI while keeping moral judgment and empathy sovereignly human.</li>
+            <li><strong>Mandatory 60-Second Rollback:</strong> Every automated agent or deployment pipeline requires an instant human pause/rollback switch.</li>
+            <li><strong>AI Safety Z-Law Veto:</strong> Zero autonomous execution above human sensitivity <code>S_y.m ≥ 0.86</code> (hiring/firing, legal/medical standing, disciplinary scoring).</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h4>Pillar 3 • Process Integration (Cypher Semantic Netnodes)</h4>
+          <ul>
+            <li><strong>LCC (Light Cypher Connect):</strong> Default opt-in, asynchronous, low-friction event handoffs with explicit payload schemas and SLAs.</li>
+            <li><strong>FCC (Force Cypher Connect):</strong> High-bandwidth co-creative synthesis sessions chartered to generate <code>N + 1</code> architectural breakthroughs.</li>
+            <li><strong>ACC vs. Banned DCC:</strong> Use <code>ACC</code> strictly for Stage Gates and Red Breaker escalations; enforce a zero-tolerance firewall against coercive <code>DCC</code> politics and dark patterns.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h4>Pillar 4 • Governance &amp; Live Telemetry (ϒ → Y → X)</h4>
+          <ul>
+            <li><strong>3-Tier Role Clarity:</strong> Tier 3 (<code>ϒ</code>) guards purpose &amp; ethics; Tier 2 (<code>Y</code>) designs stages &amp; tolerances; Tier 1 (<code>X</code>) executes autonomously in Green bands.</li>
+            <li><strong>CERIAL Ω Self-Correction:</strong> Amber drift (<code>1.07 &lt; σ_Z ≤ 1.15</code>) automatically triggers golden-ratio load damping (<code>Ω_0 = 0.618</code>) before failure occurs.</li>
+            <li><strong>CCR Compounding:</strong> Every cycle closes with <em>Check, Copy, Release</em>—turning local wins into shared organizational or personal templates.</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="blueprint-fig">
+        <img src="./assets/fig6_automation_sovereignty_matrix.svg" alt="Figure 6: Automation Sovereignty Matrix">
+        <figcaption><strong>Figure 6 — The Automation Sovereignty Matrix:</strong> Mapping Syntactic Complexity (<code>C_x.n</code>) against Human/Ethical Sensitivity (<code>S_y.m</code>) with computed critical human damping contours (<code>h_crit</code>) and the AI Safety Z-Law Veto zone.</figcaption>
+      </figure>
+
+      <figure class="blueprint-fig">
+        <img src="./assets/fig3_z_violation_gate.svg" alt="Figure 3: The Z-Violation Gate and Circuit Breaker">
+        <figcaption><strong>Figure 3 — The Z-Violation Gate &amp; Circuit-Breaker Decision Tree:</strong> Non-compensatory Veto screening followed by tri-band spectral triage (Green Autonomous Flow, Amber CERIAL Ω Brake, Red Immediate Halt &amp; Rollback).</figcaption>
+      </figure>
+    </section>
+
+    <!-- CHAPTER 4: DUAL-SCALE PLAYBOOKS -->
+    <section class="chapter page-start" id="ch4">
+      <div class="ch-kicker">Section 04 • Fractal Scale Invariance</div>
+      <h2>4. Dual-Scale Operational Playbooks: Enterprise ↔ Daily Life</h2>
+
+      <p>
+        Because CSI is built on scale-invariant relational laws (<code>Fractal Self-Similarity Axiom</code>, <code>Cypher.Semantic...658.pdf</code>, p. 202), practitioners do not maintain one rigid mentality at work and chaos at home. A multinational enterprise and a sovereign individual execute the exact same six primitives.
+      </p>
+
+      <figure class="blueprint-fig">
+        <img src="./assets/fig4_fractal_dual_scale.svg" alt="Figure 4: Fractal Dual-Scale Mapping Diagram">
+        <figcaption><strong>Figure 4 — Fractal Dual-Scale Structural Isomorphism:</strong> One-to-one mapping between Enterprise Operations and Sovereign Daily Personal Life across identical CSI operators.</figcaption>
+      </figure>
+
+      <h3>4.1 Scale A — Enterprise &amp; Corporate Operations Playbook</h3>
+      <img src="./assets/banner_enterprise_scale.jpg" alt="Enterprise Operations Studio" class="section-banner">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Enterprise Domain</th>
+              <th>Standard Legacy Pathology</th>
+              <th>CSPA / EPCSIS-P Execution Protocol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Portfolio &amp; Change Governance</strong></td>
+              <td>50-page business cases followed by silent scope creep and burnout sprints.</td>
+              <td>1-page <code>Enterprise Process Canvas</code> + 15-min Z-Stage Gate. Any initiative dropping <code>Z &lt; 0.70</code> is paused and refactored before budget release.</td>
+            </tr>
+            <tr>
+              <td><strong>Cross-Team APIs &amp; Handoffs</strong></td>
+              <td>Slack/email interruptions, tribal jargon, and undocumented breaking changes.</td>
+              <td>Every team exposes a <strong>Cypher Semantic Netnode</strong> contract: versioned <code>LCC</code> intake, <code>η_sem ≥ 80%</code> documentation, and decoupled queue bulkheads.</td>
+            </tr>
+            <tr>
+              <td><strong>SRE, Incidents &amp; Cyber Resilience</strong></td>
+              <td>Blame games, alert fatigue, and heroic 3 AM firefighting by exhausted engineers.</td>
+              <td>Zero-Incident proactive hardening + blameless <code>FCC</code> swarm channels, strict on-call recovery caps (<code>O ≥ 0.85</code>), and automated canary rollbacks.</td>
+            </tr>
+            <tr>
+              <td><strong>AI Agents &amp; Regulatory Compliance</strong></td>
+              <td>Unbounded LLM bots hallucinating promises or violating GDPR / EU AI Act rules.</td>
+              <td>Wrap every agent in an <code>EPCSIS = Z[N+1]</code> guardrail: live <code>σ_Z</code> prompt/output audit, provenance logging, and <code>&lt;60s</code> human override (<code>h &gt; h_crit</code>).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4.2 Scale B — Sovereign Daily Personal Life Playbook</h3>
+      <img src="./assets/banner_dailylife_scale.jpg" alt="Sovereign Daily Personal Life Workspace" class="section-banner">
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Personal Domain</th>
+              <th>Common Personal Z-Violation</th>
+              <th>CSPA Sovereign Life Protocol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>M.E.A.T. Resource Shield</strong></td>
+              <td>Saying "yes" out of guilt or people-pleasing until Money, Energy, Attention, and Time are depleted.</td>
+              <td>Audit every commitment against weekly <strong>M.E.A.T.</strong> budgets first (<code>Cypher.Semantic...658.pdf</code>, p. 8). Execute strictly <code>1 mission per time block</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>5:30–22:15 Dual-Aspect Cadence</strong></td>
+              <td>Waking up straight into smartphone dopamine, 14h desk marathons, and 5h fragmented sleep.</td>
+              <td><strong>05:30</strong> stretch/weights &amp; clean nutrition → <strong>07:00–17:30</strong> focused work Netnodes → <strong>18:00</strong> hard cutoff, 45m outdoor walk &amp; fresh meal → <strong>21:00</strong> book/chess/badminton → <strong>22:15</strong> phone outside bedroom (8h sleep).</td>
+            </tr>
+            <tr>
+              <td><strong>Solo Projects &amp; Knowledge Work</strong></td>
+              <td>Endless tool-tweaking (<code>x.n</code> noise) or daydreaming without shipping (<code>y.m</code> hallucination).</td>
+              <td>Order weekly <code>+1</code> deliverable in <code>y.m</code> on Sunday, cap deep side-project sprints to sustainable high-clarity blocks, and close every Sunday with <code>CCR</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>Interpersonal Boundaries (Zero-DCC)</strong></td>
+              <td>One-sided chasing, limerence, tolerating manipulative drama, or confusing promises with reality.</td>
+              <td>Enforce opt-in mutual <code>LCC</code> relationships: judge exclusively by consistent actions, step away from manipulative nodes, and let go of what cannot be forced.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CHAPTER 5: MATHEMATICAL FORMALIZATION -->
+    <section class="chapter page-start" id="ch5">
+      <div class="ch-kicker">Section 05 • Exact Systems Discipline</div>
+      <h2>5. Mathematical Formalization of CSPA / EPCSIS-P</h2>
+
+      <p>
+        All equations below harmonize the formal system definitions of <code>The_Z_Theorem_Universal_Stability_Law.md</code>, <code>PCSD</code>, <code>Cypher.Semantic...658.pdf</code>, and the computational constants of <code>z-violation-theory.py</code>.
+      </p>
+
+      <h3>5.1 Process State-Space Tuple &amp; Trinity Constructive Interference</h3>
+      <p>
+        A CSI Process <math><mi>𝒫</mi></math> evolving over time <math><mrow><mi>t</mi><mo>≥</mo><mn>0</mn></mrow></math> is defined as a 10-component dynamical system:
+      </p>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <mi>𝒫</mi>
+            <mo>=</mo>
+            <mo>⟨</mo>
+            <mi>X</mi><mo>,</mo>
+            <mi>R</mi><mo>,</mo>
+            <mi>Σ</mi><mo>,</mo>
+            <mi>𝒜</mi><mo>,</mo>
+            <msub><mi>ℛ</mi><mtext>MEAT</mtext></msub><mo>,</mo>
+            <msub><mi>Φ</mi><mo>∼</mo></msub><mo>,</mo>
+            <mi>𝒴</mi><mo>,</mo>
+            <mi>Z</mi><mo>,</mo>
+            <mi>E</mi><mo>,</mo>
+            <mi>t</mi>
+            <mo>⟩</mo>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 1)</span>
+      </div>
+
+      <p>
+        Here <math><mrow><mi>X</mi><mo>=</mo><mi>P</mi><mo>×</mo><mi>M</mi></mrow></math> pairs syntactic/physical state vectors <math><mrow><mi mathvariant="bold">p</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>∈</mo><mi>P</mi></mrow></math> (<code>x.n</code>) with semantic/humane state vectors <math><mrow><mi mathvariant="bold">m</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>∈</mo><mi>M</mi></mrow></math> (<code>y.m</code>); <math><mi>R</mi></math> is the zero-<code>DCC</code> Netnode graph enforcing UNAIQUE comprehension fidelity <math><mrow><msub><mi>η</mi><mtext>sem</mtext></msub><mo>(</mo><mi>e</mi><mo>)</mo><mo>≥</mo><mn>0.80</mn></mrow></math>; and <math><msub><mi>Φ</mi><mo>∼</mo></msub></math> applies the <strong>Trinity Binding Operator</strong> (<code>~</code>) with coupling constant <math><mrow><mi>τ</mi><mo>=</mo><mfrac><mrow><msup><mi>φ</mi><mn>2</mn></msup><mi>π</mi></mrow><mi>e</mi></mfrac><mo>≈</mo><mn>4.2343</mn></mrow></math>:
+      </p>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <mo>|</mo><msub><mi>Ψ</mi><mrow><mi>x</mi><mo>.</mo><mi>n</mi></mrow></msub><mo>∼</mo><msub><mi>Ψ</mi><mrow><mi>y</mi><mo>.</mo><mi>m</mi></mrow></msub><mo>|</mo>
+            <mo>=</mo>
+            <mo>|</mo><msub><mi>Ψ</mi><mrow><mi>x</mi><mo>.</mo><mi>n</mi></mrow></msub><mo>|</mo>
+            <mo>⋅</mo>
+            <mo>|</mo><msub><mi>Ψ</mi><mrow><mi>y</mi><mo>.</mo><mi>m</mi></mrow></msub><mo>|</mo>
+            <mo>⋅</mo>
+            <mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi>sin</mi><mo>(</mo><mi>τ</mi><mi>ϕ</mi><mo>)</mo><mo>)</mo></mrow>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 2)</span>
+      </div>
+
+      <h3>5.2 Non-Compensatory Z-Invariant, Spectral Bridge &amp; Viability ODEs</h3>
+      <p>
+        To enforce the canonical law that violating <em>any single</em> element of <math><mrow><mo>(</mo><mi>L</mi><mo>,</mo><mi>N</mi><mo>,</mo><mi>M</mi><mo>,</mo><mi>O</mi><mo>)</mo></mrow></math> collapses system integrity, <math><mrow><mi>Z</mi><mo>(</mo><mi>𝒫</mi><mo>,</mo><mi>t</mi><mo>)</mo></mrow></math> is defined via the geometric invariant paired with a bijective logarithmic bridge to <math><msub><mi>σ</mi><mi>Z</mi></msub></math> (calibrated at <math><mrow><msup><mi>Z</mi><mo>*</mo></msup><mo>=</mo><mn>1.000</mn></mrow></math>, <math><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><mn>0.15</mn></mrow></math>, and irreversibility floor <math><mrow><mi>ε</mi><mo>=</mo><mn>0.70</mn></mrow></math>):
+      </p>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <mi>Z</mi><mo>(</mo><mi>𝒫</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+            <mo>=</mo>
+            <msup>
+              <mrow><mo>(</mo><mi>L</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⋅</mo><mi>N</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⋅</mo><mi>M</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⋅</mo><mi>O</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>)</mo></mrow>
+              <mrow><mn>1</mn><mo>/</mo><mn>4</mn></mrow>
+            </msup>
+            <mo>,</mo><mspace width="2em"/>
+            <msub><mi>σ</mi><mi>Z</mi></msub><mo>(</mo><mi>Z</mi><mo>)</mo>
+            <mo>=</mo>
+            <mn>1</mn><mo>+</mo><msub><mi>S</mi><mn>0</mn></msub>
+            <mfrac>
+              <mrow><mi>ln</mi><mo>(</mo><mn>1</mn><mo>/</mo><mi>Z</mi><mo>)</mo></mrow>
+              <mrow><mi>ln</mi><mo>(</mo><mn>1</mn><mo>/</mo><mi>ε</mi><mo>)</mo></mrow>
+            </mfrac>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 3)</span>
+      </div>
+
+      <p>
+        When <math><mrow><msub><mi>σ</mi><mi>Z</mi></msub><mo>&gt;</mo><mn>1</mn><mo>+</mo><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><mn>1.15</mn></mrow></math> (<math><mrow><mi>Z</mi><mo>&lt;</mo><mn>0.70</mn></mrow></math>), the runaway instability score <math><mrow><msub><mi>V</mi><mi>Z</mi></msub><mo>(</mo><msub><mi>σ</mi><mi>Z</mi></msub><mo>)</mo></mrow></math> ignites, while coupled entropy <math><mrow><mi>E</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math> and viability <math><mrow><mi>V</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math> obey:
+      </p>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <msub><mi>V</mi><mi>Z</mi></msub><mo>(</mo><msub><mi>σ</mi><mi>Z</mi></msub><mo>)</mo>
+            <mo>=</mo>
+            <msup><mrow><mo>(</mo><mo>|</mo><msub><mi>σ</mi><mi>Z</mi></msub><mo>−</mo><mn>1</mn><mo>|</mo><mo>−</mo><msub><mi>S</mi><mn>0</mn></msub><mo>)</mo></mrow><mn>3</mn></msup>
+            <mo>⋅</mo>
+            <msubsup><mi>σ</mi><mi>Z</mi><mn>50</mn></msubsup>
+            <mspace width="0.6em"/><mtext>for</mtext><mspace width="0.35em"/><msub><mi>σ</mi><mi>Z</mi></msub><mo>&gt;</mo><mn>1.15</mn>
+            <mo>,</mo><mspace width="1.6em"/>
+            <mfrac><mrow><mi>d</mi><mi>E</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+            <mo>=</mo>
+            <msub><mi>α</mi><mi>E</mi></msub><mfrac><mrow><mn>1</mn><mo>−</mo><mi>Z</mi></mrow><mrow><mi>Z</mi><mo>+</mo><msub><mi>δ</mi><mn>0</mn></msub></mrow></mfrac>
+            <mo>−</mo>
+            <msub><mi>β</mi><mi>Ω</mi></msub><msub><mi>Ω</mi><mn>0</mn></msub><mi>E</mi>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 4)</span>
+      </div>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <mfrac><mrow><mi>d</mi><mi>V</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac>
+            <mo>=</mo>
+            <msub><mi>γ</mi><mi>V</mi></msub><mrow><mo>(</mo><mi>Z</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>−</mo><mi>ε</mi><mo>)</mo></mrow><mi>V</mi><mo>(</mo><mn>1</mn><mo>−</mo><mi>V</mi><mo>)</mo>
+            <mo>−</mo>
+            <msub><mi>μ</mi><mi>E</mi></msub><mi>max</mi><mrow><mo>(</mo><mn>0</mn><mo>,</mo><mi>ε</mi><mo>−</mo><mi>Z</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>)</mo></mrow><mi>E</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>V</mi>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 5)</span>
+      </div>
+
+      <figure class="blueprint-fig">
+        <img src="./assets/fig5_phase_space_z_boundary.svg" alt="Figure 5: Phase-Space and Z-Violation Boundary Plot">
+        <figcaption><strong>Figure 5 — Numerical Phase-Space &amp; Spectral Runaway Plot:</strong> RK4-integrated viability trajectories in <code>(Z, V)</code> space (left) and logarithmic runaway severity <code>log₁₀(1 + V_Z(σ_Z))</code> across Green, Amber, and Red regimes (right).</figcaption>
+      </figure>
+
+      <h3>5.3 EPCSIS Optimization Objective with Interior-Point Z-Barrier</h3>
+      <p>
+        Admissible process designs <math><mrow><mi>u</mi><mo>∈</mo><mi>𝒰</mi></mrow></math> maximize constructive value and throughput minus entropy, shielded by a logarithmic barrier that diverges to <math><mrow><mo>−</mo><mi>∞</mi></mrow></math> as <math><mrow><mi>Z</mi><mo>→</mo><msup><mi>ε</mi><mo>+</mo></msup></mrow></math>:
+      </p>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <munder><mi>max</mi><mrow><mi>u</mi><mo>∈</mo><mi>𝒰</mi></mrow></munder><mspace width="0.4em"/>
+            <mi>𝒥</mi><mo>(</mo><mi>𝒫</mi><mo>,</mo><mi>u</mi><mo>)</mo>
+            <mo>=</mo>
+            <msub><mi>w</mi><mtext>val</mtext></msub><msub><mi>Φ</mi><mtext>val</mtext></msub><mo>(</mo><mi mathvariant="bold">p</mi><mo>∼</mo><mi mathvariant="bold">m</mi><mo>)</mo>
+            <mo>+</mo>
+            <msub><mi>w</mi><mtext>thru</mtext></msub><mi>Θ</mi><mo>(</mo><mi>u</mi><mo>)</mo>
+            <mo>−</mo>
+            <msub><mi>w</mi><mi>E</mi></msub><mi>E</mi><mo>(</mo><mi>𝒫</mi><mo>,</mo><mi>u</mi><mo>)</mo>
+            <mo>+</mo>
+            <msub><mi>μ</mi><mi>B</mi></msub><mi>ln</mi><mrow><mo>(</mo><mi>Z</mi><mo>(</mo><mi>𝒫</mi><mo>,</mo><mi>u</mi><mo>)</mo><mo>−</mo><mi>ε</mi><mo>)</mo></mrow>
+            <mo>−</mo>
+            <msub><mi>V</mi><mi>Z</mi></msub><mo>(</mo><msub><mi>σ</mi><mi>Z</mi></msub><mo>)</mo>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 6)</span>
+      </div>
+
+      <h3>5.4 PRINCE2 × CSI Tolerance Vector &amp; Automation Loop Stability</h3>
+      <p>
+        Live Management-by-Exception evaluates the 4D normalized deviation vector <math><mrow><mi mathvariant="bold">Δ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mo>(</mo><msub><mi>Δ</mi><mtext>time</mtext></msub><mo>,</mo><msub><mi>Δ</mi><mtext>cost</mtext></msub><mo>,</mo><msub><mi>Δ</mi><mtext>qual</mtext></msub><mo>,</mo><msub><mi>Δ</mi><mi>Z</mi></msub><mo>)</mo></mrow></math>, where <math><mrow><msub><mi>Δ</mi><mi>Z</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mi>Z</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math> holds non-overridable veto priority (<math><mrow><msub><mi>Δ</mi><mi>Z</mi></msub><mo>≤</mo><mn>0.15</mn></mrow></math> Green; <math><mrow><mn>0.15</mn><mo>&lt;</mo><msub><mi>Δ</mi><mi>Z</mi></msub><mo>≤</mo><mn>0.30</mn></mrow></math> Amber <math><mi>Ω</mi></math>-Brake; <math><mrow><msub><mi>Δ</mi><mi>Z</mi></msub><mo>&gt;</mo><mn>0.30</mn></mrow></math> Red Circuit-Breaker). Simultaneously, an automated loop with machine Jacobian spectral radius <math><mrow><mi>ρ</mi><mo>(</mo><msub><mi mathvariant="bold">J</mi><mi>A</mi></msub><mo>)</mo></mrow></math> and contractive human review gain <math><mrow><msub><mi>γ</mi><mi>H</mi></msub><mo>&lt;</mo><mn>1</mn></mrow></math> remains Lyapunov-stable (<math><mrow><mi>ρ</mi><mo>(</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>h</mi><mo>)</mo><msub><mi mathvariant="bold">J</mi><mi>A</mi></msub><mo>+</mo><mi>h</mi><msub><mi mathvariant="bold">J</mi><mi>H</mi></msub><mo>)</mo><mo>&lt;</mo><mn>1</mn></mrow></math>) if and only if the <strong>Human Sovereignty Fraction <math><mi>h</mi></math></strong> satisfies:
+      </p>
+
+      <div class="math-card">
+        <math display="block">
+          <mrow>
+            <mi>h</mi>
+            <mo>&gt;</mo>
+            <msub><mi>h</mi><mtext>crit</mtext></msub>
+            <mo>=</mo>
+            <mi>min</mi><mrow><mo>(</mo><mn>1</mn><mo>,</mo><mspace width="0.3em"/><mi>max</mi><mrow><mo>(</mo><mn>0</mn><mo>,</mo><mspace width="0.3em"/>
+              <mfrac>
+                <mrow><mi>ρ</mi><mo>(</mo><msub><mi mathvariant="bold">J</mi><mi>A</mi></msub><mo>)</mo><mo>−</mo><mn>1</mn><mo>+</mo><msub><mi>χ</mi><mtext>eth</mtext></msub><msub><mi>S</mi><mrow><mi>y</mi><mo>.</mo><mi>m</mi></mrow></msub><mo>(</mo><mn>1</mn><mo>−</mo><msub><mi>η</mi><mtext>sem</mtext></msub><mo>)</mo></mrow>
+                <mrow><mi>ρ</mi><mo>(</mo><msub><mi mathvariant="bold">J</mi><mi>A</mi></msub><mo>)</mo><mo>−</mo><msub><mi>γ</mi><mi>H</mi></msub></mrow>
+              </mfrac>
+            <mo>)</mo></mrow><mo>)</mo></mrow>
+          </mrow>
+        </math>
+        <span class="eq-num">(Eq. 7)</span>
+      </div>
+
+      <!-- INTERACTIVE LIVE Z-GATE CALCULATOR (Screen Interactive, Hidden on Print) -->
+      <div class="z-calc-widget no-print">
+        <div class="callout-title" style="color:var(--indigo);">Interactive Live Telemetry Simulator — Test Any Process Against Eq. 3 &amp; Eq. 4</div>
+        <p style="font-size:13px; margin-bottom:8px;">Adjust the four humanity dimensions below to see how CSPA computes <code>Z</code>, <code>σ_Z</code>, runaway penalty <code>V_Z</code>, and the live Circuit-Breaker Gate verdict:</p>
+        <div class="slider-grid">
+          <div class="slider-row">
+            <label><span>L (Goodwill &amp; Psych Safety)</span><span id="lblL">0.90</span></label>
+            <input type="range" id="slL" min="0.10" max="1.00" step="0.01" value="0.90" oninput="updateZCalc()">
+          </div>
+          <div class="slider-row">
+            <label><span>N (Sovereign Agency &amp; Override)</span><span id="lblN">0.88</span></label>
+            <input type="range" id="slN" min="0.10" max="1.00" step="0.01" value="0.88" oninput="updateZCalc()">
+          </div>
+          <div class="slider-row">
+            <label><span>M (Cognitive &amp; Semantic Clarity)</span><span id="lblM">0.89</span></label>
+            <input type="range" id="slM" min="0.10" max="1.00" step="0.01" value="0.89" oninput="updateZCalc()">
+          </div>
+          <div class="slider-row">
+            <label><span>O (Physical &amp; Material Viability)</span><span id="lblO">0.90</span></label>
+            <input type="range" id="slO" min="0.10" max="1.00" step="0.01" value="0.90" oninput="updateZCalc()">
+          </div>
+        </div>
+        <div class="calc-readout">
+          <div><div class="k">Composite Z</div><div class="v" id="outZ">0.892</div></div>
+          <div><div class="k">Spectral σ_Z</div><div class="v" id="outSig">1.048</div></div>
+          <div><div class="k">Runaway V_Z(σ_Z)</div><div class="v" id="outVZ">0.000</div></div>
+          <div><div class="k">Z-Gate Verdict</div><div class="v" id="outVerdict" style="color:#059669;">GREEN FLOW</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 6: WORKED NUMERICAL EXAMPLES -->
+    <section class="chapter page-start" id="ch6">
+      <div class="ch-kicker">Section 06 • Step-by-Step Empirical Proofs</div>
+      <h2>6. Worked Numerical Examples: Catching Z-Violations Before Collapse</h2>
+
+      <div class="example-box">
+        <h3 style="margin-top:0;">Worked Example 1 (Enterprise): Automated Customer Support &amp; Deployment Pipeline</h3>
+        <p>
+          <strong>Context:</strong> A 50,000-customer SaaS firm compares two restructuring proposals:<br>
+          • <strong>Policy A (<code>u_legacy</code> — Coercive Cost-Cut):</strong> Cut 60% of support engineers, impose unpaid weekend on-call, bury human escalation behind a 5-loop bot (<code>DCC</code>), and auto-deploy code without canary rollback to claim a <code>−28%</code> short-term cost reduction.<br>
+          • <strong>Policy B (<code>u_CSPA</code> — EPCSIS Shielded Redesign):</strong> Automate deterministic billing/status resets (<code>h = 0</code>), deploy a RAG Co-Pilot with 1-click human handoff (<code>h = 0.45 &gt; h_crit = 0.412</code>), preserve sustainable team rotation, and enforce automated canary rollbacks (<code>η_sem = 0.88</code>).
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Calculation Step</th>
+                <th>Policy A: Coercive Cost-Cut (<code>u_legacy</code>)</th>
+                <th>Policy B: EPCSIS Redesign (<code>u_CSPA</code>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 4-Vector Inputs (L, N, M, O)</strong></td>
+                <td><code>L = 0.58, N = 0.51, M = 0.55, O = 0.60</code></td>
+                <td><code>L = 0.91, N = 0.88, M = 0.89, O = 0.89</code></td>
+              </tr>
+              <tr>
+                <td><strong>2. Composite Z = (L·N·M·O)¹ᐟ⁴</strong></td>
+                <td><code>(0.097614)¹ᐟ⁴ = 0.5589 &lt; ε = 0.70</code></td>
+                <td><code>(0.634310)¹ᐟ⁴ = 0.8924 ≥ 0.85</code></td>
+              </tr>
+              <tr>
+                <td><strong>3. Spectral Trajectory σ_Z</strong></td>
+                <td><code>1 + 0.15 · ln(1/0.5589)/ln(1/0.70) = 1.2447 &gt; 1.15</code></td>
+                <td><code>1 + 0.15 · ln(1/0.8924)/ln(1/0.70) = 1.0479 ≤ 1.07</code></td>
+              </tr>
+              <tr>
+                <td><strong>4. Runaway Penalty V_Z(σ_Z)</strong></td>
+                <td><code>(0.2447 − 0.15)³ · (1.2447)⁵⁰ = 48.38</code> (Blow-up!)</td>
+                <td><code>0.000</code> (Inside safe <code>S_0 = 0.15</code> attractor)</td>
+              </tr>
+              <tr>
+                <td><strong>5. Objective 𝒥 &amp; Gate Verdict</strong></td>
+                <td>Barrier <code>ln(0.5589 − 0.70)</code> undefined → <code>𝒥 = −∞</code><br><span class="verdict-pill v-red">RED CIRCUIT-BREAKER HALT</span></td>
+                <td><code>Δ_cost = −14%</code>, <code>Δ_time = −32%</code>, <code>𝒥 = +0.836</code><br><span class="verdict-pill v-green">GREEN AUTONOMOUS FLOW</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-bottom:0; font-size:13.5px;">
+          <strong>Diagnostic Proof:</strong> Traditional financial accounting applauds Policy A's <code>−28%</code> cost line until customer churn and senior engineer resignations trigger an outage spiral two quarters later. Equation 3 and Equation 6 catch the Z-Violation <strong>on Day 0</strong> (<code>σ_Z = 1.2447</code>) and block deployment automatically.
+        </p>
+      </div>
+
+      <div class="example-box">
+        <h3 style="margin-top:0;">Worked Example 2 (Daily Life): Solo Architect Weekly Overload vs. Sovereign Cadence</h3>
+        <p>
+          <strong>Context:</strong> A systems architect holds a demanding 9-to-5 engineering role while developing an independent AI platform:<br>
+          • <strong>Schedule A (<code>u_overload</code> — 14h Reactive Hustle):</strong> Works <code>07:00–23:30</code> daily on screens, sleeps <code>5.5h</code> with phone alerts active, skips outdoor walks, and checks unreciprocated messages compulsively.<br>
+          • <strong>Schedule B (<code>u_sovereign</code> — CSPA 5:30–22:15 Rhythm):</strong> Applies CERIAL <code>Ω</code> damping (<code>1 − Ω_0 = 38.2%</code> cap on discretionary evening load → <code>5–8h/week</code> pure deep focus), locks <code>18:00</code> walk + dinner, offline reading/sport at <code>21:00</code>, and <code>8h</code> phone-free sleep.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Calculation Step</th>
+                <th>Schedule A: 14h Reactive Hustle (<code>u_overload</code>)</th>
+                <th>Schedule B: Sovereign Cadence (<code>u_sovereign</code>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Personal (L, N, M, O)</strong></td>
+                <td><code>L = 0.66, N = 0.70, M = 0.52, O = 0.41</code> (<strong>Veto 4!</strong>)</td>
+                <td><code>L = 0.92, N = 0.93, M = 0.90, O = 0.90</code></td>
+              </tr>
+              <tr>
+                <td><strong>2. Personal Invariant Z</strong></td>
+                <td><code>(0.098498)¹ᐟ⁴ = 0.5602 &lt; 0.70</code></td>
+                <td><code>(0.693036)¹ᐟ⁴ = 0.9124 ≥ 0.85</code></td>
+              </tr>
+              <tr>
+                <td><strong>3. Spectral Trajectory σ_Z</strong></td>
+                <td><code>1 + 0.15 · ln(1/0.5602)/ln(1/0.70) = 1.2437 &gt; 1.15</code></td>
+                <td><code>1 + 0.15 · ln(1/0.9124)/ln(1/0.70) = 1.0386 ≤ 1.07</code></td>
+              </tr>
+              <tr>
+                <td><strong>4. Runaway V_Z &amp; Verdict</strong></td>
+                <td><code>V_Z = 45.89</code> + Veto 4 (<code>O &lt; 0.50</code>)<br><span class="verdict-pill v-red">HALT • 48h RECOVERY RESET</span></td>
+                <td><code>V_Z = 0.000</code> • High constructive clarity<br><span class="verdict-pill v-green">ETERNALLY STABLE CADENCE</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-bottom:0; font-size:13.5px;">
+          <strong>Diagnostic Proof:</strong> Schedule A logs more raw hours (<code>x.n</code>) while driving physiological sustainability <code>O = 0.41</code> below the hard Veto floor, guaranteeing cognitive collapse. Applying the golden-ratio CERIAL <code>Ω</code> brake restores <code>Z = 0.9124</code> (<code>σ_Z = 1.039</code>), doubling constructive output per focused hour via Equation 2.
+        </p>
+      </div>
+    </section>
+
+    <!-- CHAPTER 7: 60-MINUTE QUICK START & TEMPLATES -->
+    <section class="chapter page-start" id="ch7">
+      <div class="ch-kicker">Section 07 • Immediate Field Execution</div>
+      <h2>7. The 60-Minute Zero-Prerequisite Launch Protocol &amp; Templates</h2>
+
+      <div class="callout emerald">
+        <div class="callout-title">Zero-Prerequisite Usability Guarantee</div>
+        <p style="margin-bottom:0;">
+          You now hold the complete operational essence of ITIL 4, PRINCE2, Design Thinking, and Cypher Semantic Intelligence in one unified grammar. Follow the four 15-minute blocks below to put your first process live under Z-Protection within the next hour.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Clock Block</th>
+              <th>Execution Step</th>
+              <th>Concrete Output Artifact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Minutes 00–15</strong></td>
+              <td><strong>Order in <code>y.m</code> &amp; Strip Legacy Debt:</strong> Select one high-friction corporate workflow or personal weekly routine. Write its real human need, <code>+1</code> outcome artifact, and delete obvious <code>DCC</code> bureaucracy.</td>
+              <td>Completed Sections 1 &amp; 2 of Process Canvas</td>
+            </tr>
+            <tr>
+              <td><strong>Minutes 15–30</strong></td>
+              <td><strong>Run the 12-Point Z-Audit:</strong> Score <code>L, N, M, O</code>, check the 4 Hard Vetoes, and compute <code>Z</code> and <code>σ_Z</code>. Refactor any score below <code>0.70</code> immediately.</td>
+              <td>Signed <code>Z_Violation_Audit_Checklist</code> (<code>Z ≥ 0.70</code>)</td>
+            </tr>
+            <tr>
+              <td><strong>Minutes 30–45</strong></td>
+              <td><strong>Map Sovereignty &amp; LCC Contracts:</strong> Assign each step to Quadrant I–IV (<code>h = 0</code> Auto vs. Co-Pilot vs. <code>h = 1</code> Human) and verify ≥80% UNAIQUE handoff clarity.</td>
+              <td>Completed Section 4 + 60-second rollback path</td>
+            </tr>
+            <tr>
+              <td><strong>Minutes 45–60</strong></td>
+              <td><strong>Lock 4D Tolerances &amp; Book CCR:</strong> Define Green/Amber/Red thresholds for <code>Δ_time, Δ_cost, Δ_qual, σ_Z</code> and schedule a recurring 15-minute weekly <em>Check, Copy, Release</em> review.</td>
+              <td>Live self-correcting CSPA Netnode in operation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ready-to-Print 1-Page Field Templates</h3>
+      <div class="template-grid">
+        <div class="tpl-card">
+          <div>
+            <h4>1. Enterprise Process Canvas</h4>
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:0;">1-page A4 specification for teams, IT/SRE services, AI pipelines, and cross-departmental stage gates.</p>
+          </div>
+          <div class="tpl-links">
+            <a href="./templates/Enterprise_Process_Canvas.html" target="_blank">Open HTML</a>
+            <a href="./templates/Enterprise_Process_Canvas.md" class="sec" target="_blank">Markdown</a>
+          </div>
+        </div>
+
+        <div class="tpl-card">
+          <div>
+            <h4>2. Daily Life Process Canvas</h4>
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:0;">1-page personal architecture canvas for M.E.A.T. protection, 5:30–22:15 cadence, and solo sprints.</p>
+          </div>
+          <div class="tpl-links">
+            <a href="./templates/Daily_Life_Process_Canvas.html" target="_blank">Open HTML</a>
+            <a href="./templates/Daily_Life_Process_Canvas.md" class="sec" target="_blank">Markdown</a>
+          </div>
+        </div>
+
+        <div class="tpl-card">
+          <div>
+            <h4>3. Z-Violation Audit Checklist</h4>
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:0;">Universal 12-point pre-flight scorecard with Hard Veto screen and instant <code>Z ↔ σ_Z</code> lookup table.</p>
+          </div>
+          <div class="tpl-links">
+            <a href="./templates/Z_Violation_Audit_Checklist.html" target="_blank">Open HTML</a>
+            <a href="./templates/Z_Violation_Audit_Checklist.md" class="sec" target="_blank">Markdown</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="doc-footer">
+      <strong>Cerial Semantic Process Architecture (CSPA / EPCSIS-P v2.0)</strong> • Grounded in Cypher Semantic Intelligence &amp; The Z-Theorem by Sebastian Enger, B.Sc., M.Sc.<br>
+      <em>"Omnia vincit amor • Check, Copy, Release — Simply always getting better."</em>
+    </footer>
+
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+
+    function updateZCalc() {
+      const L = parseFloat(document.getElementById('slL').value);
+      const N = parseFloat(document.getElementById('slN').value);
+      const M = parseFloat(document.getElementById('slM').value);
+      const O = parseFloat(document.getElementById('slO').value);
+
+      document.getElementById('lblL').textContent = L.toFixed(2);
+      document.getElementById('lblN').textContent = N.toFixed(2);
+      document.getElementById('lblM').textContent = M.toFixed(2);
+      document.getElementById('lblO').textContent = O.toFixed(2);
+
+      const minElem = Math.min(L, N, M, O);
+      const Z = Math.pow(L * N * M * O, 0.25);
+      const sigma = 1.0 + 0.15 * (Math.log(1.0 / Z) / Math.log(1.0 / 0.70));
+      const dev = Math.abs(sigma - 1.0) - 0.15;
+      const vz = dev <= 0 ? 0.0 : Math.pow(dev, 3) * Math.pow(sigma, 50);
+
+      document.getElementById('outZ').textContent = Z.toFixed(3);
+      document.getElementById('outSig').textContent = sigma.toFixed(3);
+      document.getElementById('outVZ').textContent = vz === 0 ? '0.000' : (vz > 9999 ? vz.toExponential(2) : vz.toFixed(2));
+
+      const vEl = document.getElementById('outVerdict');
+      if (minElem < 0.50) {
+        vEl.textContent = 'VETO 4 HALT';
+        vEl.style.color = '#DC2626';
+      } else if (Z < 0.70 || sigma > 1.15) {
+        vEl.textContent = 'RED BREAKER';
+        vEl.style.color = '#DC2626';
+      } else if (Z < 0.85 || sigma > 1.07) {
+        vEl.textContent = 'AMBER Ω-DAMP';
+        vEl.style.color = '#D97706';
+      } else {
+        vEl.textContent = 'GREEN FLOW';
+        vEl.style.color = '#059669';
+      }
+    }
+    updateZCalc();
+  </script>
+</body>
+</html>
