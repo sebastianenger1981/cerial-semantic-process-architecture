@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 800" width="1240" height="800">
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#065F46"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="spineGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0284C7"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#D97706"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+
+<rect x="0" y="0" width="1240" height="800" fill="url(#bgGrad)" rx="10"/>
+
+  <rect x="0" y="0" width="1240" height="82" fill="url(#navyGrad)"/>
+  <rect x="0" y="79" width="1240" height="3" fill="url(#goldGrad)"/>
+  <text x="36" y="32" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11.5" font-weight="700" fill="#FBBF24" letter-spacing="1.4">FIGURE 4 • FRACTAL SCALE INVARIANCE</text>
+  <text x="36" y="55" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="19.5" font-weight="800" fill="#FFFFFF">Dual-Scale Structural Isomorphism: Enterprise Operations ↔ Daily Personal Life</text>
+  <text x="36" y="72" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#CBD5E1">Identical CSI Operators, Governance Tiers, Communication Channels, and Z-Guards Applied Across 10,000-Person Firms and 1-Person Lives</text>
+
+
+  <rect x="36" y="98" width="420" height="42" rx="8" fill="url(#cyanGrad)" filter="url(#cardShadow)"/>
+  <text x="246" y="124" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">ENTERPRISE / CORPORATE SCALE</text>
+
+  <rect x="480" y="98" width="280" height="42" rx="8" fill="url(#navyGrad)" stroke="#F59E0B" stroke-width="1.8" filter="url(#cardShadow)"/>
+  <text x="620" y="124" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="13" font-weight="700" fill="#FBBF24">CSI CORE PRIMITIVE</text>
+
+  <rect x="784" y="98" width="420" height="42" rx="8" fill="url(#emeraldGrad)" filter="url(#cardShadow)"/>
+  <text x="994" y="124" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">SOVEREIGN DAILY LIFE SCALE</text>
+
+
+  <!-- Enterprise Box -->
+  <rect x="36" y="154" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="36" y="154" width="6" height="90" rx="3" fill="#0284C7"/>
+  <text x="54" y="178" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Executive Stewardship &amp; Mission Charter</text>
+  <text x="54" y="201" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Board/C-Suite sets ethical boundaries, Continued</text>
+  <text x="54" y="220" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Business Justification, and sunsets toxic legacy portfolios.</text>
+
+  <!-- Left Arrow -->
+  <line x1="480" y1="199" x2="458" y2="199" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Center CSI Primitive -->
+  <rect x="480" y="162" width="280" height="74" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="620" y="193" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14" font-weight="700" fill="#FBBF24">ϒ (Origins)</text>
+  <text x="620" y="215" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">Apex Purpose &amp; Meta-Rules</text>
+
+  <!-- Right Arrow -->
+  <line x1="760" y1="199" x2="782" y2="199" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Daily Life Box -->
+  <rect x="784" y="154" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="1198" y="154" width="6" height="90" rx="3" fill="#059669"/>
+  <text x="800" y="178" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Core Life Vision &amp; Personal Constitution</text>
+  <text x="800" y="201" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Define non-negotiable life values, long-term direction,</text>
+  <text x="800" y="220" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">and retire commitments that no longer serve growth.</text>
+
+
+  <!-- Enterprise Box -->
+  <rect x="36" y="258" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="36" y="258" width="6" height="90" rx="3" fill="#0284C7"/>
+  <text x="54" y="282" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Process Architecture &amp; Stage Control</text>
+  <text x="54" y="305" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Design cross-team value streams, allocate</text>
+  <text x="54" y="324" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">budgets/headcount, and define stage-gate tolerance bands.</text>
+
+  <!-- Left Arrow -->
+  <line x1="480" y1="303" x2="458" y2="303" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Center CSI Primitive -->
+  <rect x="480" y="266" width="280" height="74" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="620" y="297" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14" font-weight="700" fill="#FBBF24">Y = N + 1</text>
+  <text x="620" y="319" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">Source Design &amp; Allocation</text>
+
+  <!-- Right Arrow -->
+  <line x1="760" y1="303" x2="782" y2="303" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Daily Life Box -->
+  <rect x="784" y="258" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="1198" y="258" width="6" height="90" rx="3" fill="#059669"/>
+  <text x="800" y="282" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Weekly Architecture &amp; M.E.A.T. Shield</text>
+  <text x="800" y="305" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Protect Money, Energy, Attention &amp; Time; plan weekly</text>
+  <text x="800" y="324" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">outcomes in y.m before Monday execution.</text>
+
+
+  <!-- Enterprise Box -->
+  <rect x="36" y="362" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="36" y="362" width="6" height="90" rx="3" fill="#0284C7"/>
+  <text x="54" y="386" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Autonomous Squads, SRE &amp; Service Flow</text>
+  <text x="54" y="409" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Run daily sprints, CI/CD deployments, incident swarm</text>
+  <text x="54" y="428" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">recovery, and UNAIQUE ≥80% clear documentation.</text>
+
+  <!-- Left Arrow -->
+  <line x1="480" y1="407" x2="458" y2="407" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Center CSI Primitive -->
+  <rect x="480" y="370" width="280" height="74" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="620" y="401" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14" font-weight="700" fill="#FBBF24">X &amp; x.n ~ y.m</text>
+  <text x="620" y="423" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">Netnode Constructive Flow</text>
+
+  <!-- Right Arrow -->
+  <line x1="760" y1="407" x2="782" y2="407" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Daily Life Box -->
+  <rect x="784" y="362" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="1198" y="362" width="6" height="90" rx="3" fill="#059669"/>
+  <text x="800" y="386" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">5:30–22:15 Dual-Aspect Daily Cadence</text>
+  <text x="800" y="409" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Deep focused work blocks balanced with physical</text>
+  <text x="800" y="428" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">training, walks, healthy nutrition, and non-digital rest.</text>
+
+
+  <!-- Enterprise Box -->
+  <rect x="36" y="466" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="36" y="466" width="6" height="90" rx="3" fill="#0284C7"/>
+  <text x="54" y="490" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Organizational Z-Integrity Audit</text>
+  <text x="54" y="513" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">L: Psych safety • N: Decision autonomy • M: Meaningful</text>
+  <text x="54" y="532" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">work • O: Fair pay &amp; sustainable workload.</text>
+
+  <!-- Left Arrow -->
+  <line x1="480" y1="511" x2="458" y2="511" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Center CSI Primitive -->
+  <rect x="480" y="474" width="280" height="74" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="620" y="505" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14" font-weight="700" fill="#FBBF24">Z = (L,N,M,O)</text>
+  <text x="620" y="527" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">Z ≥ 0.70  |  σ_Z ≤ 1.15</text>
+
+  <!-- Right Arrow -->
+  <line x1="760" y1="511" x2="782" y2="511" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Daily Life Box -->
+  <rect x="784" y="466" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="1198" y="466" width="6" height="90" rx="3" fill="#059669"/>
+  <text x="800" y="490" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Personal Vitality &amp; Dignity Invariant</text>
+  <text x="800" y="513" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">L: Self-respect • N: Personal agency • M: Calm mental</text>
+  <text x="800" y="532" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">clarity • O: 8h sleep, ergonomics &amp; financial margin.</text>
+
+
+  <!-- Enterprise Box -->
+  <rect x="36" y="570" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="36" y="570" width="6" height="90" rx="3" fill="#0284C7"/>
+  <text x="54" y="594" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Inter-Team APIs &amp; Stakeholder Comms</text>
+  <text x="54" y="617" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Opt-in LCC webhooks, co-creative FCC workshops, ACC</text>
+  <text x="54" y="636" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">escalation; zero fear-based DCC politics.</text>
+
+  <!-- Left Arrow -->
+  <line x1="480" y1="615" x2="458" y2="615" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Center CSI Primitive -->
+  <rect x="480" y="578" width="280" height="74" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="620" y="609" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14" font-weight="700" fill="#FBBF24">LCC / FCC / ACC</text>
+  <text x="620" y="631" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">Zero-DCC Protocol</text>
+
+  <!-- Right Arrow -->
+  <line x1="760" y1="615" x2="782" y2="615" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Daily Life Box -->
+  <rect x="784" y="570" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="1198" y="570" width="6" height="90" rx="3" fill="#059669"/>
+  <text x="800" y="594" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Interpersonal &amp; Digital Boundaries</text>
+  <text x="800" y="617" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Consent-based commitments, mutual relationships, judge</text>
+  <text x="800" y="636" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">actions over words, cut one-sided energy drains.</text>
+
+
+  <!-- Enterprise Box -->
+  <rect x="36" y="674" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="36" y="674" width="6" height="90" rx="3" fill="#0284C7"/>
+  <text x="54" y="698" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Blameless Postmortems &amp; Open Playbooks</text>
+  <text x="54" y="721" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Measure sprint telemetry, codify winning workflows into</text>
+  <text x="54" y="740" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">shared templates, release across teams.</text>
+
+  <!-- Left Arrow -->
+  <line x1="480" y1="719" x2="458" y2="719" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Center CSI Primitive -->
+  <rect x="480" y="682" width="280" height="74" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="620" y="713" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14" font-weight="700" fill="#FBBF24">CCR + CERIAL Ω</text>
+  <text x="620" y="735" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0">Check • Copy • Release</text>
+
+  <!-- Right Arrow -->
+  <line x1="760" y1="719" x2="782" y2="719" stroke="#059669" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Daily Life Box -->
+  <rect x="784" y="674" width="420" height="90" rx="8" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <rect x="1198" y="674" width="6" height="90" rx="3" fill="#059669"/>
+  <text x="800" y="698" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Sunday Review &amp; Habit Compounding</text>
+  <text x="800" y="721" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">Audit weekly energy &amp; σ_Z drift, apply Ω-brake if</text>
+  <text x="800" y="740" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">overloaded, clone what worked, release perfectionism.</text>
+
+
+  <text x="620" y="788" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#334155">Fractal Scaling Theorem: T(Φ, λ_corp, λ_life) preserves all Z-stability guarantees across organizational scales.</text>
+
+</svg>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 830" width="1200" height="830">
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#065F46"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="spineGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#0284C7"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#D97706"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+
+<rect x="0" y="0" width="1200" height="830" fill="url(#bgGrad)" rx="10"/>
+
+  <rect x="0" y="0" width="1200" height="82" fill="url(#navyGrad)"/>
+  <rect x="0" y="79" width="1200" height="3" fill="url(#goldGrad)"/>
+  <text x="36" y="32" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11.5" font-weight="700" fill="#FBBF24" letter-spacing="1.4">FIGURE 1 • ARCHITECTURAL STACK</text>
+  <text x="36" y="55" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="19.5" font-weight="800" fill="#FFFFFF">The Cerial Semantic Process Architecture (CSPA / EPCSIS-P v2.0)</text>
+  <text x="36" y="72" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#CBD5E1">Five-Layer Fractal Hierarchy Governed by PCSD Semantic Duality and the Non-Negotiable Z-Violation Invariant</text>
+
+
+  <rect x="32" y="102" width="102" height="696" rx="10" fill="url(#spineGrad)" filter="url(#cardShadow)"/>
+  <rect x="35" y="105" width="96" height="690" rx="8" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="83" y="136" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11" font-weight="700" fill="#FBBF24">EPCSIS</text>
+  <text x="83" y="153" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11" font-weight="700" fill="#FFFFFF">Z[N + 1]</text>
+  <line x1="48" y1="166" x2="118" y2="166" stroke="#64748B" stroke-width="1"/>
+  <g transform="translate(83, 445) rotate(-90)">
+    <text x="0" y="-6" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">CONTINUOUS Z-SHIELD &amp; LIVE σ_Z TELEMETRY RAIL</text>
+    <text x="0" y="13" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="10.5" fill="#BAE6FD">Green ≤ 1.07  |  Amber ≤ 1.15 (CERIAL Ω)  |  Red &gt; 1.15 (Halt)</text>
+  </g>
+  <text x="83" y="768" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="10" font-weight="700" fill="#FDE68A">AXIOM 0</text>
+  <text x="83" y="783" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="10" fill="#FFFFFF">LOCKED</text>
+
+<line x1="134" y1="168" x2="156" y2="168" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrowAmber)"/>
+<line x1="134" y1="322" x2="156" y2="322" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrowAmber)"/>
+<line x1="134" y1="488" x2="156" y2="488" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrowAmber)"/>
+<line x1="134" y1="622" x2="156" y2="622" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrowAmber)"/>
+<line x1="134" y1="745" x2="156" y2="745" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrowAmber)"/>
+
+  <rect x="158" y="102" width="1010" height="132" rx="10" fill="#FFFFFF" stroke="#0284C7" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="158" y="102" width="1010" height="32" rx="9" fill="#E0F2FE"/>
+  <text x="176" y="123" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11.5" font-weight="700" fill="#0369A1">LAYER 4 • FRACTAL EXECUTION SCALES (X — Operational Netnode Delivery)</text>
+  <text x="1150" y="123" text-anchor="end" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11" font-weight="600" fill="#0369A1">Same Core Grammar</text>
+
+  <!-- Enterprise Card -->
+  <rect x="176" y="144" width="476" height="78" rx="7" fill="#F8FAFC" stroke="#BAE6FD" stroke-width="1.5"/>
+  <circle cx="196" cy="164" r="7" fill="#0284C7"/>
+  <text x="211" y="168" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0F172A">Scale A: Enterprise &amp; Corporate Mode</text>
+  <text x="192" y="189" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#334155">• Autonomous Delivery Squads, SRE/IT Ops &amp; CI/CD Change Gates</text>
+  <text x="192" y="207" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#334155">• Cross-Department APIs, Customer Value Streams &amp; EU AI Act Audits</text>
+
+  <!-- Isomorphism Bridge -->
+  <text x="663" y="188" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#0284C7">↔</text>
+
+  <!-- Daily Life Card -->
+  <rect x="674" y="144" width="476" height="78" rx="7" fill="#F0FDF4" stroke="#A7F3D0" stroke-width="1.5"/>
+  <circle cx="694" cy="164" r="7" fill="#059669"/>
+  <text x="709" y="168" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#0F172A">Scale B: Sovereign Daily Life Mode</text>
+  <text x="690" y="189" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#334155">• M.E.A.T. Shield (Money, Energy, Attention, Time) &amp; Habit Loops</text>
+  <text x="690" y="207" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#334155">• 5:30–22:15 Dual-Aspect Cadence, Solo Projects &amp; Clear Boundaries</text>
+
+
+  <rect x="158" y="250" width="1010" height="154" rx="10" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="158" y="250" width="1010" height="32" rx="9" fill="#DBEAFE"/>
+  <text x="176" y="271" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11.5" font-weight="700" fill="#1E3A8A">LAYER 3 • FOUR FUNCTIONAL PILLARS (Y = N + 1 — Source Architecture &amp; Control)</text>
+  <text x="1150" y="271" text-anchor="end" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11" font-weight="600" fill="#1E3A8A">EPCSIS = Z[N+1]</text>
+
+
+  <rect x="176" y="294" width="233" height="98" rx="7" fill="#EFF6FF" stroke="#1E40AF" stroke-width="1.4"/>
+  <text x="188" y="315" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#1E40AF">1. Process Optimization</text>
+  <text x="188" y="337" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• PCSD x.n ~ y.m alignment</text>
+  <text x="188" y="356" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• Legacy decontamination</text>
+  <text x="188" y="375" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• Eliminate friction &amp; waste</text>
+
+
+  <rect x="423" y="294" width="233" height="98" rx="7" fill="#F0F9FF" stroke="#0369A1" stroke-width="1.4"/>
+  <text x="435" y="315" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#0369A1">2. Process Automation</text>
+  <text x="435" y="337" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• Bounded autonomy Z[N+1]</text>
+  <text x="435" y="356" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• HitL damping h &gt; h_crit</text>
+  <text x="435" y="375" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• AI Safety Z-Law guardrails</text>
+
+
+  <rect x="670" y="294" width="233" height="98" rx="7" fill="#ECFDF5" stroke="#047857" stroke-width="1.4"/>
+  <text x="682" y="315" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#047857">3. Process Integration</text>
+  <text x="682" y="337" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• Cypher Semantic Netnodes</text>
+  <text x="682" y="356" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• LCC / FCC / ACC protocols</text>
+  <text x="682" y="375" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• Strict Zero-DCC firewall</text>
+
+
+  <rect x="917" y="294" width="233" height="98" rx="7" fill="#FFFBEB" stroke="#B45309" stroke-width="1.4"/>
+  <text x="929" y="315" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#B45309">4. Governance &amp; Telemetry</text>
+  <text x="929" y="337" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• 3-Tier ϒ → Y → X roles</text>
+  <text x="929" y="356" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• 4D Δ-Tolerance exception</text>
+  <text x="929" y="375" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#1E293B">• CCR: Check, Copy, Release</text>
+
+
+  <rect x="158" y="420" width="1010" height="136" rx="10" fill="#FFFFFF" stroke="#475569" stroke-width="1.8" filter="url(#cardShadow)"/>
+  <rect x="158" y="420" width="1010" height="32" rx="9" fill="#E2E8F0"/>
+  <text x="176" y="441" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11.5" font-weight="700" fill="#1E293B">LAYER 2 • PURIFIED CLASSICAL DNA (x.n Syntactic Methods — Z-Audited, Zero Textbook Jargon)</text>
+
+
+  <rect x="176" y="463" width="314" height="80" rx="7" fill="#F8FAFC" stroke="#7C3AED" stroke-width="1.4"/>
+  <text x="190" y="485" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="700" fill="#7C3AED">Design Thinking DNA (Adaptive Front-End)</text>
+  <text x="190" y="507" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">• Resonant Need Sensing (LCC) → Intent Framing</text>
+  <text x="190" y="526" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">• Rapid Netnode Prototyping &amp; Lived-Reality Testing</text>
+
+
+  <rect x="506" y="463" width="314" height="80" rx="7" fill="#F8FAFC" stroke="#0F766E" stroke-width="1.4"/>
+  <text x="520" y="485" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="700" fill="#0F766E">PRINCE2 7th Ed. DNA (Controlled Execution)</text>
+  <text x="520" y="507" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">• Continued Purpose &amp; Z Justification • Stage Gates</text>
+  <text x="520" y="526" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">• Outcome-Product Planning • Management by Exception</text>
+
+
+  <rect x="836" y="463" width="314" height="80" rx="7" fill="#F8FAFC" stroke="#1D4ED8" stroke-width="1.4"/>
+  <text x="850" y="485" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="700" fill="#1D4ED8">ITIL 4 DNA (Continuous Value &amp; Stability)</text>
+  <text x="850" y="507" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">• End-to-End Value Streams • Swarm Incident Recovery</text>
+  <text x="850" y="526" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#334155">• Root Entropy Elimination • Shielded Change Flow</text>
+
+
+  <rect x="158" y="572" width="1010" height="102" rx="10" fill="#FFFFFF" stroke="#059669" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="158" y="572" width="1010" height="30" rx="9" fill="#D1FAE5"/>
+  <text x="176" y="592" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="11.5" font-weight="700" fill="#065F46">LAYER 1 • CSI SEMANTIC &amp; CONSTRUCTIVE-INTERFERENCE ENGINE (y.m ↔ x.n Coupling)</text>
+
+  <rect x="176" y="611" width="312" height="52" rx="6" fill="#F8FAFC" stroke="#6EE7B7" stroke-width="1.2"/>
+  <text x="332" y="632" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="12" font-weight="700" fill="#065F46">PCSD: S = ⟨P, M, I⟩</text>
+  <text x="332" y="650" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#334155">Meaning(S) = f(x.n ↔ y.m) — Bounded Rates</text>
+
+  <rect x="506" y="611" width="312" height="52" rx="6" fill="#F8FAFC" stroke="#6EE7B7" stroke-width="1.2"/>
+  <text x="662" y="632" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="12" font-weight="700" fill="#065F46">Trinity: N~ = {x.n ~ y.m}</text>
+  <text x="662" y="650" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#334155">Constructive Interference (τ = φ²π/e ≈ 4.234)</text>
+
+  <rect x="836" y="611" width="314" height="52" rx="6" fill="#F8FAFC" stroke="#6EE7B7" stroke-width="1.2"/>
+  <text x="993" y="632" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="12" font-weight="700" fill="#065F46">UNAIQUE Clarity: η_sem ≥ 0.80</text>
+  <text x="993" y="650" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#334155">≥80% Receiver Comprehension Across Roles</text>
+
+
+  <rect x="158" y="690" width="1010" height="108" rx="10" fill="url(#navyGrad)" stroke="#F59E0B" stroke-width="2.5" filter="url(#cardShadow)"/>
+  <text x="663" y="717" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="12" font-weight="700" fill="#FBBF24" letter-spacing="1.2">LAYER 0 • SUPREME CONSTITUTIONAL INVARIANT — THE Z-VIOLATION LAW (AXIOM 0 &amp; THEOREM 7.1)</text>
+  <text x="663" y="744" text-anchor="middle" font-family="'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace" font-size="14.5" font-weight="700" fill="#FFFFFF">Z(P, t) = (L · N · M · O)^(1/4) ≥ ε = 0.70    ⇔    σ_Z ≤ 1.15    |    dE/dt ∝ −Z(P, t)</text>
+  <text x="663" y="768" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#E2E8F0">L: Psychological Safety &amp; Goodwill  •  N: Sovereign Agency  •  M: Cognitive Meaning &amp; Autonomy  •  O: Physical &amp; Material Sustainability</text>
+  <text x="663" y="787" text-anchor="middle" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-style="italic" fill="#FDE68A">"Sustained coercion or dehumanization (Z → 0) deterministically drives entropy divergence (E → ∞) and system annihilation (V → 0)."</text>
+
+</svg>
